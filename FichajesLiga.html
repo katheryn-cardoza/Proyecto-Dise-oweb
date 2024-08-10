@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fichajes Liga</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: none; 
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 150px;
+    background-image: url('Imagenes/Encabezado.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+  }
+
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+    z-index: 1000;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    z-index: 1000;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59; 
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #1e3d59; 
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  #carruselContainer {
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #carruselContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    max-width: 1000px; 
+  }
+
+  #tabla th, #tabla td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  #tabla th {
+    background-color: #1e3d59;
+    color: #fff;
+  }
+
+  #tabla tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+  width: 30px;
+  height: 30px;
+  background-color: #fff; 
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #000000; 
+    padding: 20px;
+    text-align: center;
+  }
+
+  .slick-dots li button:before {
+    color: #1e3d59;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #1e3d59;
+    font-size: 30px;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a>
+        <ul>
+          <li><a href="Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="Historia_Mundial.html">Historias</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="Historia_Confederaciones.html">Historia d elas Confederaciones</a></li>
+          <li><a href="Historia_Copa_America.html">Historia Copa America</a></li>
+          <li><a href="HistoriaEurocopa.html">Historia Eurocopa</a></li>
+          <li><a href="HistoriaLiga.html">Historia Liga</a></li>
+          <li><a href="HistoriaPremierL.html">Historia Premier</a></li>
+          <li><a href="Rivalidades.html">Rivalidades Historico</a></li>
+          <li><a href="Grande_Momentos_Fut.html">Grandes Momentos del Fotball </a></li>
+          <!--<li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>!-->
+        </ul>
+      </li>
+      <li><a href="Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="NoticiasLiga.html">Noticias</a></li>
+          <li><a href="PartidosLiga.html">Partidos</a></li>
+          <li><a href="ResultadosLiga.html">Resultados</a></li>
+          <li><a href="ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="FichajesLiga.html">Fichajes</a></li>
+          <li><a href="GolesLiga.html">Los Mejores Goles</a></li>
+          <li><a href="horarios.html">Horarios en Vivo </a></li>
+          <li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>
+        </ul>
+      </li>
+      <li><a href="informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="Juegos.html">Videojuegos</a></li>
+          <li><a href="Noticias.html">Noticias</a></li>
+          <li><a href="entrevistas.html">Entrevistas</a></li>
+          <li><a href="Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional/Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga nacional/Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Liga nacional/Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Liga nacional/Desempeño.html">Desempeño</a></li>
+              <li><a href="Liga nacional/Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Liga nacional/Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Liga nacional/Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="HistoriaPremierL.html">Historia</a></li>
+          <li><a href="NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="PartidosPremierL.html">Partidos</a></li>
+          <li><a href="ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+        <li><a href="Ligas internacionales.html">Ligas Internacionales</a>
+          <ul>
+            <li><a href="LigaAlemana.html">Liga Alemana</a></li>
+            <li><a href="LigaItaliana.html">Liga Italiana</a></li>
+            <li><a href="LigaArgentina.html">Liga Argentina</a></li>
+            <li><a href="LigaMexicana.html">Liga Mexicana</a></li>
+            <li><a href="LigaFrancesa.html">Liga Francesa</a></li>
+            <li><a href="LigaPortuguesa.html">Liga Portuguesa</a></li>
+            <li><a href="LigaBrasilena.html">Liga Brasileña</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      </li>
+    </ul>
+  </div>
+  <div id="body">
+    <div align="center">
+      <h1><b>Mercado de traspasos Liga Española</b></h1>
+    </div>
+    <div id="carruselContainer">
+      <!-- Aquí agregas tus elementos del carrusel -->
+    </div>
+    <div id="tabla">
+      <table width="100%" border="1" cellpadding="5" cellspacing="0" align="center">
+        <tr>
+          <td>
+            <a href="https://www.palco23.com/competiciones/laliga-reduce-su-inversion-en-fichajes-de-verano-un-24-hasta-4049-millones-de-euros">
+              <img src="Imagenes/traspasoliga.jpg" alt="LaLiga reduce su inversión en fichajes de verano" width="100%">
+              <p>La Liga reduce su inversión en fichajes de verano un 20%, hasta 423,4 millones de euros</p>
+            </a>
+          </td>
+          <td>
+            <a href="https://www.atalayar.com/articulo/economia-y-empresas/fichajes-mas-caros-liga-espanola/20230920161150191219.html">
+              <img src="Imagenes/traspasoliga1.jpg" alt="Los fichajes más caros de la Liga española" width="100%">
+              <p>Los fichajes más caros de la Liga española</p>
+            </a>
+          </td>
+          <td>
+            <a href="https://www.mediotiempo.com/futbol/la-liga/mbappe-no-cerrado-su-fichaje-con-el-real-madrid-por-un-detalle">
+              <img src="Imagenes/traspasoliga2.jpg" alt="Mbappé y el Real Madrid" width="100%">
+              <p>El detalle que separa a Mbappé del Real Madrid a horas de que cierre el mercado de fichajes</p>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="Ing">
+    <p>Diseño web - Katheryn</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.slick-carousel').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: true
+  });
+});
+</script>
+</body>
+</html>

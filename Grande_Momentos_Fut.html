@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grandes Momentos del Fútbol</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: none;
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 150px;
+    background-image: url('Imagenes/Encabezado.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+    z-index: 1000;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 > li {
+    position: relative;
+  }
+
+  #MenuBar1 > li > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 > li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #MenuBar1 > li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #1e3d59;
+  }
+
+  .momentos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .momentos img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .momentos h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1e3d59;
+  }
+
+  .momentos p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  .video-container {
+    margin: 40px auto;
+    max-width: 800px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .slick-dots li button:before {
+    color: #1e3d59;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #1e3d59;
+    font-size: 30px;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <!-- Menú incluido aquí -->
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#">Historias</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="Historia_Confederaciones.html">Historia de las Confederaciones</a></li>
+          <li><a href="Historia_Copa_America.html">Historia Copa América</a></li>
+          <li><a href="HistoriaEurocopa.html">Historia Eurocopa</a></li>
+          <li><a href="Rivalidades.html">Rivalidades Históricas</a></li>
+          <li><a href="Grande_Momentos_Fut.html">Grandes Momentos del Fútbol</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga española.html">Liga Española</a></li>
+      <li><a href="informacion de hoy.html">Información de Hoy</a></li>
+      <li><a href="Liga nacional/Liga nacional.html">Liga Nacional</a></li>
+      <li><a href="LigaInglesa.html">Liga Inglesa</a></li>
+      <li><a href="Ligas internacionales.html">Ligas Internacionales</a></li>
+    </ul>
+  </div>
+  
+  <div id="body">
+    <h1>Grandes Momentos del Fútbol</h1>
+    
+    <div class="momentos">
+      <h2>La Mano de Dios - Maradona</h2>
+      <img src="https://cdn.britannica.com/55/161655-050-1A14F882/Diego-Maradona-holding-ball-hand-1986.jpg" alt="La Mano de Dios">
+      <p>Durante el Mundial de 1986 en México, Diego Maradona protagonizó uno de los momentos más icónicos en la historia del fútbol con su famoso gol conocido como "La Mano de Dios". Maradona utilizó su mano para anotar un gol en los cuartos de final contra Inglaterra, un momento que ha quedado grabado en la memoria de todos los aficionados al fútbol.</p>
+    </div>
+    
+    <div class="momentos">
+      <h2>El Gol de la Decada - Maradona</h2>
+      <img src="https://www.futbolsapiens.com/wp-content/uploads/2021/09/Maradona.jpg" alt="El Gol de la Decada">
+      <p>En el mismo partido de "La Mano de Dios", Maradona también anotó otro gol que muchos consideran el mejor de la historia de los Mundiales. Con una increíble carrera desde el medio campo, superó a varios jugadores ingleses para anotar un gol que ha sido apodado "El Gol de la Década".</p>
+    </div>
+    
+    <div class="momentos">
+      <h2>La Remontada del Barcelona</h2>
+      <img src="https://static1.futbolred.com/files/article_content_elimparcial/uploads/2017/03/09/1489064825530.jpg" alt="La Remontada del Barcelona">
+      <p>En la vuelta de los octavos de final de la Champions League 2016-17, el FC Barcelona realizó una remontada histórica contra el Paris Saint-Germain. Después de perder 4-0 en el partido de ida, el Barcelona ganó 6-1 en el Camp Nou, logrando una de las remontadas más espectaculares de la historia del fútbol europeo.</p>
+    </div>
+    
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/4W7q26r2kaU" title="La Mano de Dios - Diego Maradona" allowfullscreen></iframe>
+    </div>
+    
+    <div id="Ing">
+      <p>Síguenos en nuestras redes sociales:</p>
+      <a href="https://www.youtube.com"><img src="Imagenes/YouTube.png" alt="YouTube"></a>
+      <a href="https://www.google.com"><img src="Imagenes/Google.png" alt="Google"></a>
+      <a href="https://www.facebook.com"><img src="Imagenes/Facebook.png" alt="Facebook"></a>
+      <a href="https://wa.me/1234567890"><img src="Imagenes/WhatsApp.png" alt="WhatsApp"></a>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Grandes Momentos del Fútbol. Todos los derechos reservados.</p>
+  </footer>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.slick-carousel').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    });
+  });
+</script>
+</body>
+</html>
