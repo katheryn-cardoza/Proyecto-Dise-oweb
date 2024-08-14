@@ -1,16 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Los Mejores Goles de la Última Década de la Premier</title>
+<meta charset="UTF-8">
+<title>Goles Premier</title>
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<!-- Slick Carousel -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <style>
-  /* Resetting default browser styles */
   * {
     margin: 0;
     padding: 0;
@@ -21,25 +24,25 @@
     font-family: 'Roboto', sans-serif;
     color: #333;
     background-color: #f5f5f5;
+    text-align: center;
   }
 
   #Contenedor {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: none; 
   }
 
   #encabezado {
     width: 100%;
-    height: 200px;
-    background-image: url(Imagenes/Encabezado.jpg); 
+    height: 150px;
+    background-image: url('Imagenes/Encabezado.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
+    position: relative; 
   }
 
-  /* Overlay for header */
   #encabezado::after {
     content: '';
     position: absolute;
@@ -52,7 +55,7 @@
 
   #menu {
     width: 100%;
-    background-color: #1e3d59;
+    background-color: #1e3d59; /* Fondo del menú */
   }
 
   #MenuBar1 {
@@ -69,30 +72,32 @@
   }
 
   #MenuBar1 a {
-    color: #fff;
+    color: #fff; /* Color del texto */
     text-decoration: none;
     padding: 20px;
     display: block;
     font-weight: 700;
     transition: background 0.3s;
+    background-color: #1e3d59; /* Fondo de los enlaces */
   }
 
   #MenuBar1 li:hover > a {
-    background-color: #16324f;
+    background-color: #16324f; /* Fondo de los enlaces cuando se hace hover */
   }
 
   #MenuBar1 ul {
     list-style: none;
+    z-index: 1000;
     padding: 10px 0;
     margin: 0;
     position: absolute;
     top: 60px;
     left: 0;
     display: none;
-    background-color: #1e3d59;
+    background-color: #1e3d59; /* Fondo del submenú */
     min-width: 200px;
     border-radius: 4px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   }
 
   #MenuBar1 li:hover > ul {
@@ -105,12 +110,12 @@
 
   #MenuBar1 ul li a {
     padding: 10px 20px;
-    color: #fff;
-    background-color: transparent;
+    color: #fff; /* Color del texto en el submenú */
+    background-color: #1e3d59; /* Fondo del submenú */
   }
 
   #MenuBar1 ul li a:hover {
-    background-color: #16324f;
+    background-color: #16324f; /* Fondo del submenú cuando se hace hover */
   }
 
   #body {
@@ -123,7 +128,7 @@
   }
 
   #carruselContainer {
-    max-width: 1000px;
+    max-width: 500px;
     margin: 20px auto;
     border-radius: 8px;
     overflow: hidden;
@@ -138,8 +143,8 @@
   #tabla {
     width: 100%;
     border-collapse: collapse;
-    text-align: center;
-    margin-top: 30px;
+    margin: 30px auto;
+    max-width: 1000px; 
   }
 
   #tabla th, #tabla td {
@@ -150,13 +155,11 @@
 
   #tabla th {
     background-color: #1e3d59;
-    text-align: center;
     color: #fff;
   }
 
   #tabla tr:nth-child(even) {
     background-color: #f9f9f9;
-    text-align: center;
   }
 
   #Ing {
@@ -179,7 +182,9 @@
   #Ing img {
     width: 30px;
     height: 30px;
-    filter: brightness(0) invert(1);
+    background-color: #fff; 
+    padding: 5px;
+    border-radius: 50%;
     transition: transform 0.3s;
   }
 
@@ -189,12 +194,11 @@
 
   footer {
     background-color: #1e3d59;
-    color: #fff;
+    color: #000000; 
     padding: 20px;
     text-align: center;
   }
 
-  /* Slick Carousel Customization */
   .slick-dots li button:before {
     color: #1e3d59;
   }
@@ -204,6 +208,7 @@
     font-size: 30px;
   }
 </style>
+
 <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
 </head>
@@ -301,7 +306,7 @@
       </table>
     </div>
     <div id="Ing">
-      <p>Diseño web - Luis</p>
+      <p>Diseño web - Dante</p>
       <a href="https://www.youtube.com" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
       </a>

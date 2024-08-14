@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejores defensores de la historia</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e3d59;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        #encabezado {
+            width: 100%;
+            height: 150px;
+            background-image: url('Imagenes/Encabezado.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative; 
+        }
+
+        #encabezado::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Menú */
+        #menu {
+            width: 100%;
+            background-color: #1e3d59;
+            z-index: 1000;
+        }
+
+        #MenuBar1 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        #MenuBar1 li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        #MenuBar1 a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+            display: block;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        #MenuBar1 li:hover > a {
+            background-color: #16324f;
+        }
+
+        #MenuBar1 ul {
+            list-style: none;
+            z-index: 1000;
+            padding: 10px 0;
+            margin: 0;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            display: none;
+            background-color: #1e3d59; 
+            min-width: 200px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #MenuBar1 li:hover > ul {
+            display: block;
+        }
+
+        #MenuBar1 ul li {
+            margin: 0;
+        }
+
+        #MenuBar1 ul li a {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #1e3d59;
+        }
+
+        #MenuBar1 ul li a:hover {
+            background-color: #16324f;
+        }
+
+        /* Contenedor principal */
+        #Contenedor {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: none;
+        }
+
+        #body {
+            padding: 40px 20px;
+        }
+
+        #body p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Carrusel */
+        #carruselContainer {
+            max-width: 500px;
+            margin: 20px auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #carruselContainer img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slick-dots li button:before {
+            color: #1e3d59;
+        }
+
+        .slick-prev:before, .slick-next:before {
+            color: #1e3d59;
+            font-size: 30px;
+        }
+
+        /* Cards */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            color: #ffffff;
+            background-color: #1e3d59;
+            border: 1px solid #555;
+            border-radius: 10px;
+            margin: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card h2 {
+            margin: 10px 0;
+        }
+
+        .card p {
+            padding: 0 10px 20px 10px;
+        }
+
+        /* Tabla */
+        #tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        #tabla th, #tabla td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        #tabla th {
+            background-color: #1e3d59;
+            color: #fff;
+        }
+
+        #tabla tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Pie de página */
+        #Ing {
+            width: 100%;
+            background-color: #1e3d59;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #Ing p {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        #Ing img {
+            width: 30px;
+            height: 30px;
+            background-color: #fff; 
+            padding: 5px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        #Ing a:hover img {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #1e3d59;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        footer .images img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        footer p {
+            margin: 10px 0 0 0;
+        }
+    </style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a>
+        <ul>
+          <li><a href="Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="Historia_Mundial.html">Historias</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="Historia_Confederaciones.html">Historia d elas Confederaciones</a></li>
+          <li><a href="Historia_Copa_America.html">Historia Copa America</a></li>
+          <li><a href="HistoriaEurocopa.html">Historia Eurocopa</a></li>
+          <li><a href="HistoriaLiga.html">Historia Liga</a></li>
+          <li><a href="HistoriaPremierL.html">Historia Premier</a></li>
+          <li><a href="Rivalidades.html">Rivalidades Historico</a></li>
+          <li><a href="Grande_Momentos_Fut.html">Grandes Momentos del Fotball </a></li>
+          <li><a href="mporteros.html">Mejores porteros históricos </a></li>
+          <!--<li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>!-->
+        </ul>
+      </li>
+      <li><a href="Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="NoticiasLiga.html">Noticias</a></li>
+          <li><a href="PartidosLiga.html">Partidos</a></li>
+          <li><a href="ResultadosLiga.html">Resultados</a></li>
+          <li><a href="ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="FichajesLiga.html">Fichajes</a></li>
+          <li><a href="GolesLiga.html">Los Mejores Goles</a></li>
+          <li><a href="horarios.html">Horarios en Vivo </a></li>
+          <li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>
+        </ul>
+      </li>
+      <li><a href="informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="Juegos.html">Videojuegos</a></li>
+          <li><a href="Noticias.html">Noticias</a></li>
+          <li><a href="entrevistas.html">Entrevistas</a></li>
+          <li><a href="Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional/Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga nacional/Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Liga nacional/Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Liga nacional/Desempeño.html">Desempeño</a></li>
+              <li><a href="Liga nacional/Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Liga nacional/Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Liga nacional/Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="HistoriaPremierL.html">Historia</a></li>
+          <li><a href="NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="PartidosPremierL.html">Partidos</a></li>
+          <li><a href="ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+        <li><a href="Ligas internacionales.html">Ligas Internacionales</a>
+          <ul>
+            <li><a href="LigaAlemana.html">Liga Alemana</a></li>
+            <li><a href="LigaItaliana.html">Liga Italiana</a></li>
+            <li><a href="LigaArgentina.html">Liga Argentina</a></li>
+            <li><a href="LigaMexicana.html">Liga Mexicana</a></li>
+            <li><a href="LigaFrancesa.html">Liga Francesa</a></li>
+            <li><a href="LigaPortuguesa.html">Liga Portuguesa</a></li>
+            <li><a href="LigaBrasilena.html">Liga Brasileña</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+<header>
+    <h1>Mejores Defensores de la Historia</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+        <img src="Imagenes/franco.png" alt="Liga Overview">
+    <h2>Franco Baresi</h2>
+      <p>Una leyenda italiana que dedicó toda su carrera al <strong>AC Milan</strong>. Curiosamente, su hermano jugó como defensa central en el máximo rival, el <strong>Inter de Milán</strong>. Baresi ganó la <strong>Copa del Mundo</strong> con Italia en 1982 y conquistó un total de 18 títulos con su club. El Milan retiró su dorsal en honor a su legado.</p>
+  </div>
+  <div class="card">
+        <img src="Imagenes/franz.png" alt="Equipos">
+    <h2>Franz Beckenbauer</h2>
+      <p>Conocido como <strong>"El Kaiser"</strong>, Beckenbauer es considerado uno de los mejores defensas de la historia del fútbol. Ganó un <strong>Mundial</strong> y una <strong>Eurocopa</strong> con la selección alemana, además de múltiples títulos con el <strong>Bayern de Múnich</strong>. Fue dos veces ganador del <strong>Balón de Oro</strong>, un logro notable para un jugador de su posición.<br>
+      </p>
+  </div>
+  <div class="card">
+        <img src="Imagenes/puyol.png" alt="Competencias">
+    <h3>Carles Puyol</h3>
+        <p>El mejor defensa español que ha tenido la selección, Puyol pasó toda su carrera en el <strong>FC Barcelona</strong>. Como capitán del equipo, levantó seis títulos en un solo año y acumuló un total de 21 con el Barça, además de un <strong>Mundial</strong> y una <strong>Eurocopa</strong> con España.</p>
+    <h2>&nbsp;</h2>
+  </div>
+  <div class="card">
+        <img src="Imagenes/sergio.png" alt="Estadios">
+    <h3>Sergio Ramos</h3>
+        <p>Sergio Ramos comenzó como lateral derecho, pero se consolidó como uno de los mejores defensas centrales de la historia. Su impresionante palmarés incluye un <strong>Mundial</strong>, dos <strong>Eurocopas</strong>, varias <strong>Ligas de Campeones</strong>, y muchos otros títulos nacionales e internacionales. Sigue en activo y es probable que continúe ampliando su legado.</p>
+    <h2>&nbsp;</h2>
+  </div>
+  <div class="card">
+        <img src="Imagenes/daniel.png" alt="Medios de Comunicación">
+    <h3>Daniel Passarella</h3>
+        <p>El único jugador argentino en ganar dos <strong>Copas del Mundo</strong>, Passarella es también el defensa con más goles en la historia del fútbol argentino. Jugó en su país y en Europa, destacándose en Italia.</p>
+    <h2>&nbsp;</h2>
+      <p><strong>Interrupciones</strong>: No se celebró entre 1971 y 1985 debido a la falta de interés y profesionalismo. Se reanudó en 1985-86, sin los equipos israelíes, y experimentó varios cambios de formato.</p>
+      <p><strong>Competiciones Asociadas</strong>: La Confederación Asiática de Fútbol introdujo la <strong>Recopa de la AFC</strong> en 1990 y la <strong>Supercopa Asiática</strong> en 1995.</p>
+  </div>
+  <div class="card">
+        <img src="Imagenes/mathias.png" alt="Medios de Comunicación">
+    <h3>Matthias Sammer</h3>
+        <p>Sammer representó a dos selecciones nacionales: primero a la <strong>República Democrática Alemana</strong> y luego a la <strong>Alemania reunificada</strong>. Ganó un <strong>Balón de Oro</strong> y una <strong>Eurocopa</strong>, pero una lesión de rodilla truncó su carrera a los 30 años.</p>
+    <h2>&nbsp;</h2>
+  </div>
+  
+  <div class="card">
+        <img src="Imagenes/bobby.png" alt="Medios de Comunicación">
+    <h3>Bobby Moore</h3>
+    <p><strong>Bobby Moore</strong> es una leyenda del fútbol inglés, capitán de la selección que ganó el <strong>Mundial de 1966</strong>. Su legado perdura a pesar de haber fallecido joven debido a un cáncer.</p>
+    <h2>&nbsp;</h2>
+  </div>
+</div>
+
+<div id="Ing">
+    <p>Diseño web - Dante</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+  
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+  </div>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+  </script>
+  </body>
+  </html>
+  </html>
