@@ -1,472 +1,402 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Hoy</title>
-<style type="text/css">
+<meta charset="UTF-8">
+<title>Información de Hoy </title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+
   #Contenedor {
-    position: absolute;
-    width: 1024px;
-    height: 1000px;
-    z-index: 1;
-    left: 12%;
-    top: 0px;
-    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: none; 
   }
+
   #encabezado {
-    position: absolute;
-    width: 1024px;
+    width: 100%;
     height: 150px;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    background-color: #FFFFFF;
-    background-image: url(Imagenes/Baner.jpg);
+    background-image: url('Imagenes/Encabezado.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative; 
   }
-  #menu {
-	position: absolute;
-	width: 1024px;
-	height: 30px;
-	z-index: 7; 
-	top: 150px;
-	left: 0px;
-	background-color: #00FF00;
-  }
-  #body {
-	position: absolute;
-	width: 1014px;
-	height: 750px;
-	z-index: 3;
-	top: 185px;
-	left: 5px;
-	background-color: #FFFFFF;
-	font-family: 'Times New Roman', Times, serif;
-	color: #000;
-  }
-  #imagen {
-	position: absolute;
-	width: 210px;
-	height: 370px;
-	z-index: 4;
-	left: 810px;
-	top: 185px;
-	background-color: #f7f7f7;
-	background-image: url(Imagenes/ima1.jpg);
-  }
-  #Img {
+
+  #encabezado::after {
+    content: '';
     position: absolute;
-    width: 210px;
-    height: 370px;
-    z-index: 5;
-    left: 810px;
-    top: 560px;
-    background-image: url(Imagenes/img1.jpg);
-	transition: background-image 0.5s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
   }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+    z-index: 1000;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    z-index: 1000;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59; 
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #1e3d59; 
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  #carruselContainer {
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #carruselContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    max-width: 1000px; 
+  }
+
+  #tabla th, #tabla td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  #tabla th {
+    background-color: #1e3d59;
+    color: #fff;
+  }
+
+  #tabla tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
   #Ing {
-	position: absolute;
-	width: 1014px;
-	height: 60px;
-	z-index: 6;
-	top: 938px;
-	left: 5px;
-	background-color: #333333;
-	font-family: 'Times New Roman', Times, serif;
-	color: #FFF;
-	text-align: center;
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+  width: 30px;
+  height: 30px;
+  background-color: #fff; 
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #000000; 
+    padding: 20px;
+    text-align: center;
+  }
+
+  .slick-dots li button:before {
+    color: #1e3d59;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #1e3d59;
+    font-size: 30px;
   }
 </style>
-<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-#apDiv1 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 264px;
-	top: 19px;
-	font-size: 9px;
-}
-#apDiv2 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 30px;
-	top: 19px;
-	background-image: url(Imagenes/His1.jpg);
-}
-#apDiv3 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 553px;
-	top: 19px;
-	background-image: url(Imagenes/His2.jpg);
-}
-#apDiv4 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 784px;
-	top: 19px;
-	font-size: 9px;
-}
-#apDiv5 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 264px;
-	top: 162px;
-	font-size: 9px;
-}
-#apDiv6 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 553px;
-	top: 162px;
-	background-image: url(Imagenes/His4.jpg);
-}
-#apDiv7 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 2;
-	left: 30px;
-	top: 162px;
-}
-#apDiv8 {	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 2;
-	left: 30px;
-	top: 162px;
-}
-#apDiv9 {	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 2;
-	left: 30px;
-	top: 162px;
-}
-#apDiv10 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 2;
-	left: 30px;
-	top: 162px;
-	background-image: url(Imagenes/His3.jpg);
-}
-#apDiv11 {	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 2;
-	left: 30px;
-	top: 162px;
-}
-#apDiv12 {	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 1;
-	left: 553px;
-	top: 162px;
-}
-#apDiv13 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 3;
-	left: 784px;
-	top: 162px;
-	font-size: 8px;
-}
-#apDiv14 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 30px;
-	top: 304px;
-	background-image: url(Imagenes/His5.jpg);
-}
-#apDiv15 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 5;
-	left: 30px;
-	top: 447px;
-	background-image: url(Imagenes/His7.jpg);
-}
-#apDiv16 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 6;
-	left: 30px;
-	top: 590px;
-	background-image: url(Imagenes/His9.jpg);
-}
-#apDiv17 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 264px;
-	top: 304px;
-	font-size: 9px;
-}
-#apDiv18 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 553px;
-	top: 304px;
-	background-image: url(Imagenes/His6.jpg);
-}
-#apDiv19 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 784px;
-	top: 304px;
-	font-size: 9px;
-}
-#apDiv20 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 264px;
-	top: 447px;
-	font-size: 8px;
-}
-#apDiv21 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 553px;
-	top: 447px;
-	background-image: url(Imagenes/His8.jpg);
-}
-#apDiv22 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 784px;
-	top: 447px;
-	font-size: 9px;
-}
-#apDiv23 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 264px;
-	top: 590px;
-	font-size: 9px;
-}
-#apDiv24 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 553px;
-	top: 590px;
-	background-image: url(Imagenes/His010.jpg);
-}
-#apDiv25 {
-	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 784px;
-	top: 590.px;
-	top: 590px;
-	font-size: 9px;
-}
-#apDiv26 {	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 30px;
-	top: 304px;
-}
-#apDiv27 {	position: absolute;
-	width: 200px;
-	height: 115px;
-	z-index: 4;
-	left: 30px;
-	top: 304px;
-}
-</style>
-<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+
 </head>
 <body>
 <div id="Contenedor">
   <div id="encabezado"></div>
+  
   <div id="menu">
     <ul id="MenuBar1" class="MenuBarHorizontal">
-      <li><a href="index.html" class="MenuBarItemSubmenu">Inicio</a>
+      <li><a href="index.html">Inicio</a>
         <ul>
           <li><a href="Autores.html">Autores</a></li>
         </ul>
       </li>
-      
-      <li><a href="Liga española.html" class="MenuBarItemSubmenu">Liga Espa&ntilde;ola</a>
-          <ul>
+      <li><a href="Historia_Mundial.html">Historias</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="Historia_Confederaciones.html">Historia d elas Confederaciones</a></li>
+          <li><a href="Historia_Copa_America.html">Historia Copa America</a></li>
+          <li><a href="HistoriaEurocopa.html">Historia Eurocopa</a></li>
+          <li><a href="HistoriaLiga.html">Historia Liga</a></li>
+          <li><a href="HistoriaPremierL.html">Historia Premier</a></li>
+          <li><a href="Rivalidades.html">Rivalidades Historico</a></li>
+          <li><a href="Grande_Momentos_Fut.html">Grandes Momentos del Fotball </a></li>
+          <!--<li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>!-->
+        </ul>
+      </li>
+      <li><a href="Liga española.html">Liga Española</a>
+        <ul>
           <li><a href="HistoriaLiga.html">Historia</a></li>
           <li><a href="NoticiasLiga.html">Noticias</a></li>
           <li><a href="PartidosLiga.html">Partidos</a></li>
           <li><a href="ResultadosLiga.html">Resultados</a></li>
-          <li><a href="ClasificacionLiga.html">Clasificacion</a></li>
+          <li><a href="ClasificacionLiga.html">Clasificación</a></li>
           <li><a href="FichajesLiga.html">Fichajes</a></li>
           <li><a href="GolesLiga.html">Los Mejores Goles</a></li>
+          <li><a href="horarios.html">Horarios en Vivo </a></li>
+          <li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>
         </ul>
-
       </li>
-      
-      <li><a href="informacion de hoy.html" class="MenuBarItemSubmenu">Informacion de Hoy</a>
+      <li><a href="informacion de hoy.html">Información de Hoy</a>
         <ul>
           <li><a href="Partidos Hoy.html">Partidos de hoy</a></li>
-<li><a href="Juegos.html">VideoJuegos</a></li>
+          <li><a href="Juegos.html">Videojuegos</a></li>
           <li><a href="Noticias.html">Noticias</a></li>
           <li><a href="entrevistas.html">Entrevistas</a></li>
-          <li><a href="Futballl femenino.html">Futbol Femenino</a></li>
-          <li><a href="otras paginas.html">Otras Paginas</a></li>
+          <li><a href="Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="otras paginas.html">Otras Páginas</a></li>
         </ul>
       </li>
-
-      <li><a class="MenuBarItemSubmenu" href="Liga nacional/Liga nacional.html">Liga nacional</a>
+      <li><a href="Liga nacional/Liga nacional.html">Liga Nacional</a>
         <ul>
-          <li><a class="MenuBarItemSubmenu" href="Liga nacional/Liga 2023.html">Liga 2023</a>
+          <li><a href="Liga nacional/Liga 2023.html">Liga 2023</a>
             <ul>
               <li><a href="Liga nacional/Trayectoria.html">Trayectoria</a></li>
-              <li><a href="Liga nacional/Desempeño.html">Desempe&ntilde;o</a></li>
+              <li><a href="Liga nacional/Desempeño.html">Desempeño</a></li>
               <li><a href="Liga nacional/Rendimiento.html">Rendimiento</a></li>
-              <li><a href="Liga nacional/Pronostico.html">Pronostico</a></li>
+              <li><a href="Liga nacional/Pronostico.html">Pronóstico</a></li>
             </ul>
           </li>
-          <li><a href="Liga nacional/Curiosidades y anecdotas.html">Curiosidades y an&eacute;cdotas</a></li>
-</ul>
+          <li><a href="Liga nacional/Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
       </li>
-      <li><a href="LigaInglesa.html" class="MenuBarItemSubmenu">Liga Inglesa</a>
+      <li><a href="LigaInglesa.html">Liga Inglesa</a>
         <ul>
           <li><a href="HistoriaPremierL.html">Historia</a></li>
           <li><a href="NoticiasPremierL.html">Noticias</a></li>
           <li><a href="PartidosPremierL.html">Partidos</a></li>
           <li><a href="ResultadosPremierL.html">Resultados</a></li>
-          <li><a href="ClasificacionPremierL.html">Clasificacion</a></li>
+          <li><a href="ClasificacionPremierL.html">Clasificación</a></li>
           <li><a href="FichajesPremierL.html">Fichajes</a></li>
           <li><a href="GolesPremierL.html">Los Mejores Goles</a></li>
         </ul>
-        </ul>
+        <li><a href="Ligas internacionales.html">Ligas Internacionales</a>
+          <ul>
+            <li><a href="LigaAlemana.html">Liga Alemana</a></li>
+            <li><a href="LigaItaliana.html">Liga Italiana</a></li>
+            <li><a href="LigaArgentina.html">Liga Argentina</a></li>
+            <li><a href="LigaMexicana.html">Liga Mexicana</a></li>
+            <li><a href="LigaFrancesa.html">Liga Francesa</a></li>
+            <li><a href="LigaPortuguesa.html">Liga Portuguesa</a></li>
+            <li><a href="LigaBrasilena.html">Liga Brasileña</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
       </li>
     </ul>
   </div>
   <div id="body">
 
-    <div id="apDiv1">
-      <h1><a href="https://www.mundodeportivo.com/futbol/fc-barcelona/20231213/1002153129/muchas-novedades-alineacion-barca-amberes.html">Siete novedades en la alineación del Barça ante el Amberes pero con Lewandowski</a></h1>
+  <div id="body">
+    <h1>Bienvenido a Nuestra Página de Fútbol</h1>
+    <p>Aquí encontrarás toda la información actualizada sobre las ligas nacionales e internacionales, resultados, clasificaciones, y mucho más.</p>
+    <div id="carruselContainer">
+      <!-- Contenido del carrusel aquí -->
     </div>
-    <div id="apDiv2"></div>
-  <div id="apDiv3"></div>
-  <div id="apDiv4">
-    <h1><a href="https://www.mundodeportivo.com/futbol/mallorca/20231213/1002153141/sergi-darder-mi-mejor-version-esta-llegar.html">Sergi Darder: &quot;Mi mejor versión está por llegar&quot;</a></h1>
+    <table id="tabla">
+      <tr>
+        <th>Equipo</th>
+        <th>Posición</th>
+        <th>Puntos</th>
+        <th>Partidos Jugados</th>
+      </tr>
+      <tr>
+        <td>Real Madrid</td>
+        <td>1</td>
+        <td>89</td>
+        <td>38</td>
+      </tr>
+      <tr>
+        <td>Barcelona</td>
+        <td>2</td>
+        <td>84</td>
+        <td>38</td>
+      </tr>
+      <tr>
+        <td>Atlético de Madrid</td>
+        <td>3</td>
+        <td>76</td>
+        <td>38</td>
+      </tr>
+    </table>
   </div>
-  <div id="apDiv7"></div>
-  <div id="apDiv5">
-    <h1><a href="https://www.mundodeportivo.com/futbol/fc-barcelona/20231213/1002153136/1x1-barca-rosengard.html">El 1x1 del Barça ante el Rosengard en el descanso</a></h1>
-  </div>
-  <div id="apDiv8"></div>
-  <div id="apDiv9"></div>
-  <div id="apDiv6"></div>
-  <div id="apDiv13">
-    <h1><a href="https://www.mundodeportivo.com/futbol/andorra/20231213/1002153135/alvaro-martin-rivalidad-espanyol-esta-importa-cosas.html">Álvaro Martín: &quot;La rivalidad con el Espanyol está ahí, pero nos importa hacer las cosas bien&quot;</a></h1>
-  </div>
-  <div id="apDiv10"></div>
-  <div id="apDiv14"></div>
-  <div id="apDiv15"></div>
-  <div id="apDiv16"></div>
-  <div id="apDiv11"></div>
-  <div id="apDiv12"></div>
-  <div id="apDiv17">
-    <h1><a href="https://www.mundodeportivo.com/futbol/champions-league/20231213/1002150049/newcastle-united-ac-milan-directo-champions-league.html">Newcastle - Milan, en directo | Sigue el partido de la Champions League</a></h1>
-  </div>
-  <div id="apDiv18"></div>
-  <div id="apDiv19">
-    <h1><a href="https://www.mundodeportivo.com/futbol/internacional/20231213/1002153133/peru.html">Relevo al frente de la selección peruana</a></h1>
-  </div>
-  <div id="apDiv20">
-    <h1><a href="https://www.mundodeportivo.com/futbol/real-madrid/20231213/1002153124/ex-tecnico-castilla-encuentra-acomodo-segunda-rfef.html">Oficial: Un extécnico merengue encuentra acomodo en Segunda RFEF</a></h1>
-  </div>
-  <div id="apDiv21"></div>
-  <div id="apDiv22">
-    <h1><a href="https://www.mundodeportivo.com/futbol/champions-league/20231213/1002153126/debut-sonado-hamilton-latigazo-escuadra.html">Debut soñado de la nueva joya de Pep Guardiola: ¡Vaya derechazo a la escuadra!</a></h1>
-  </div>
-  <div id="apDiv23">
-    <h1><a href="https://www.mundodeportivo.com/futbol/ud-las-palmas/20231213/1002153123/kirian-dejamos-hablar-siguiente-partido-vendran-derrotas.html">Kirian: &quot;Si dejamos de hablar del siguiente partido, vendrán las derrotas&quot;</a></h1>
-  </div>
-  <div id="apDiv24"></div>
-  <div id="apDiv25">
-    <h1><a href="https://www.mundodeportivo.com/futbol/real-madrid/20231213/1002153121/raul-gonzalez-encantado-ancelotti.html">Raul González, encantado con Ancelotti</a></h1>
-  </div>
-  </div>
-  <div id="Ing"></div>
-</div>
 
-<script>
-  var imgElement = document.getElementById("imagen");
-  var defaultImage = "url(Imagenes/ima1.jpg)";
-
-  // Asociar eventos a cada párrafo
-  var parrafos = document.querySelectorAll("#body p");
-
-  for (var i = 0; i < parrafos.length; i++) {
-    parrafos[i].addEventListener("mouseover", function() {
-      // Obtener el número de párrafo actual
-      var index = Array.from(parrafos).indexOf(this);
-
-      // Cambiar la imagen en función del grupo de párrafos
-      if (index < 2) {
-        imgElement.style.backgroundImage = "url(Imagenes/ima1.jpg)";
-      } else if (index < 4) {
-        imgElement.style.backgroundImage = "url(Imagenes/ima2.jpg)";
-      } else {
-        imgElement.style.backgroundImage = "url(Imagenes/ima3.jpg)";
-      }
-    });
-
-    // Restablecer la imagen predeterminada cuando el ratón sale del párrafo
-    parrafos[i].addEventListener("mouseout", function() {
-      imgElement.style.backgroundImage = defaultImage;
-    });
-  }
-</script>
-
-
-<script>
-var imgIndex = 1;
-  function changeImage() {
-    var imgElement = document.getElementById("Img");
-    imgIndex = (imgIndex % 3) + 1; // Cambiar entre 1, 2 y 3
-    imgElement.style.backgroundImage = "url(Imagenes/img" + imgIndex + ".jpg)";
-  }
-
-  setInterval(changeImage, 3000); // Cambiar cada 3 segundos
-var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
-</script>
-
-</body>
-</html>
+  <div id="Ing">
+    <p>Diseño web - Cesar/p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+  
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+  </div>
+  
+  <script>
+    var imgElement = document.getElementById("imagen");
+    var defaultImage = "url(Imagenes/ima1.jpg)";
+  
+    // Asociar eventos a cada párrafo
+    var parrafos = document.querySelectorAll("#body p");
+  
+    for (var i = 0; i < parrafos.length; i++) {
+      parrafos[i].addEventListener("mouseover", function() {
+        // Obtener el número de párrafo actual
+        var index = Array.from(parrafos).indexOf(this);
+  
+        // Cambiar la imagen en función del grupo de párrafos
+        if (index < 2) {
+          imgElement.style.backgroundImage = "url(Imagenes/ima1.jpg)";
+        } else if (index < 4) {
+          imgElement.style.backgroundImage = "url(Imagenes/ima2.jpg)";
+        } else {
+          imgElement.style.backgroundImage = "url(Imagenes/ima3.jpg)";
+        }
+      });
+  
+      // Restablecer la imagen predeterminada cuando el ratón sale del párrafo
+      parrafos[i].addEventListener("mouseout", function() {
+        imgElement.style.backgroundImage = defaultImage;
+      });
+    }
+  </script>
+  
+  
+  <script>
+  var imgIndex = 1;
+    function changeImage() {
+      var imgElement = document.getElementById("Img");
+      imgIndex = (imgIndex % 3) + 1; // Cambiar entre 1, 2 y 3
+      imgElement.style.backgroundImage = "url(Imagenes/img" + imgIndex + ".jpg)";
+    }
+  
+    setInterval(changeImage, 3000); // Cambiar cada 3 segundos
+  var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+  </script>
+  
+  </body>
+  </html>

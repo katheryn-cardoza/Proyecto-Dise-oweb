@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Liga Argentina</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    #body {
+   padding: 40px 20px;
+   font-family: 'Roboto', sans-serif;
+   text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px; /* Ajusta este valor según sea necesario */
+   margin: auto;
+    }
+  
+    #Contenedor {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: none; 
+      text-align: center;
+    }
+  
+    #encabezado {
+      width: 100%;
+      height: 150px;
+      background-image: url('Imagenes/Encabezado.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative; 
+    }
+  
+    #encabezado::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  
+    #menu {
+      width: 100%;
+      background-color: #1e3d59;
+      z-index: 1000;
+    }
+  
+    #MenuBar1 {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+  
+    #MenuBar1 li {
+      position: relative;
+      margin: 0 20px;
+    }
+  
+    #MenuBar1 a {
+      color: #fff;
+      text-decoration: none;
+      padding: 20px;
+      display: block;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+  
+    #MenuBar1 li:hover > a {
+      background-color: #16324f;
+    }
+  
+    #MenuBar1 ul {
+      list-style: none;
+      z-index: 1000;
+      padding: 10px 0;
+      margin: 0;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      display: none;
+      background-color: #1e3d59; 
+      min-width: 200px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade sombra ligera si es necesario */
+    }
+  
+    #MenuBar1 li:hover > ul {
+      display: block;
+    }
+  
+    #MenuBar1 ul li {
+      margin: 0;
+    }
+  
+    #MenuBar1 ul li a {
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #1e3d59; /* Cambiado para evitar fondo transparente */
+    }
+  
+    #MenuBar1 ul li a:hover {
+      background-color: #16324f;
+    }
+  
+    #body {
+      padding: 40px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #body p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      text-align: center;
+    }
+  
+    #carruselContainer {
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  
+    #carruselContainer img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  
+    #tabla {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+  
+    #tabla th, #tabla td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+  
+    #tabla th {
+      background-color: #1e3d59;
+      color: #fff;
+    }
+  
+    #tabla tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    #Ing {
+      width: 100%;
+      background-color: #1e3d59;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+    }
+  
+    #Ing p {
+      margin: 0;
+      font-weight: 700;
+    }
+  
+    #Ing img {
+      width: 30px;
+      height: 30px;
+      background-color: #fff; 
+      padding: 5px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+  
+    #Ing a:hover img {
+      transform: scale(1.1);
+    }
+  
+    footer {
+      background-color: #1e3d59;
+      color: #000000; 
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .slick-dots li button:before {
+      color: #1e3d59;
+    }
+  
+    .slick-prev:before, .slick-next:before {
+      color: #1e3d59;
+      font-size: 30px;
+    }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a>
+        <ul>
+          <li><a href="Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="Historia_Mundial.html">Historias</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="Historia_Confederaciones.html">Historia d elas Confederaciones</a></li>
+          <li><a href="Historia_Copa_America.html">Historia Copa America</a></li>
+          <li><a href="HistoriaEurocopa.html">Historia Eurocopa</a></li>
+          <li><a href="HistoriaLiga.html">Historia Liga</a></li>
+          <li><a href="HistoriaPremierL.html">Historia Premier</a></li>
+          <li><a href="Rivalidades.html">Rivalidades Historico</a></li>
+          <li><a href="Grande_Momentos_Fut.html">Grandes Momentos del Fotball </a></li>
+          <li><a href="mporteros.html">Mejores porteros históricos </a></li>
+          <!--<li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>!-->
+        </ul>
+      </li>
+      <li><a href="Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="HistoriaLiga.html">Historia</a></li>
+          <li><a href="NoticiasLiga.html">Noticias</a></li>
+          <li><a href="PartidosLiga.html">Partidos</a></li>
+          <li><a href="ResultadosLiga.html">Resultados</a></li>
+          <li><a href="ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="FichajesLiga.html">Fichajes</a></li>
+          <li><a href="GolesLiga.html">Los Mejores Goles</a></li>
+          <li><a href="horarios.html">Horarios en Vivo </a></li>
+          <li><a href="narradores.html">Nuestros Narradores</a></li>
+          <li><a href="pronostico.html">Nuestros Pronosticos</a></li>
+        </ul>
+      </li>
+      <li><a href="informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="Juegos.html">Videojuegos</a></li>
+          <li><a href="Noticias.html">Noticias</a></li>
+          <li><a href="entrevistas.html">Entrevistas</a></li>
+          <li><a href="Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional/Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga nacional/Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Liga nacional/Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Liga nacional/Desempeño.html">Desempeño</a></li>
+              <li><a href="Liga nacional/Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Liga nacional/Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Liga nacional/Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="HistoriaPremierL.html">Historia</a></li>
+          <li><a href="NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="PartidosPremierL.html">Partidos</a></li>
+          <li><a href="ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+        <li><a href="Ligas internacionales.html">Ligas Internacionales</a>
+          <ul>
+            <li><a href="LigaAlemana.html">Liga Alemana</a></li>
+            <li><a href="LigaItaliana.html">Liga Italiana</a></li>
+            <li><a href="LigaArgentina.html">Liga Argentina</a></li>
+            <li><a href="LigaMexicana.html">Liga Mexicana</a></li>
+            <li><a href="LigaFrancesa.html">Liga Francesa</a></li>
+            <li><a href="LigaPortuguesa.html">Liga Portuguesa</a></li>
+            <li><a href="LigaBrasilena.html">Liga Brasileña</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      </li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h1>Historia de la Liga Argentina</h1>
+    
+    <div class="historia">
+        <h2>Origen de la Liga Argentina</h2>
+        <p>La Liga Argentina de Fútbol, oficialmente conocida como la Primera División de Argentina, es la máxima categoría del fútbol profesional en Argentina. Su origen se remonta a 1893, cuando se fundó la Asociación Argentina de Football (A.A.F.) y se organizó el primer campeonato nacional. En sus inicios, el torneo estaba reservado para equipos de Buenos Aires y sus alrededores, pero con el tiempo se expandió para incluir equipos de todo el país.</p>
+        <p>La Primera División ha evolucionado significativamente desde sus primeros años. En 1931, la liga se profesionalizó, marcando el inicio de una nueva era en el fútbol argentino. Desde entonces, la liga ha sido el escenario de muchos de los eventos más importantes del fútbol argentino y ha sido testigo del surgimiento de algunos de los mejores jugadores del mundo.</p>
+        <p>El torneo se juega anualmente y cuenta con la participación de los mejores equipos del país. A lo largo de su historia, la Liga Argentina ha sido el hogar de clubes legendarios como Boca Juniors, River Plate, Independiente y Racing Club, que han dejado una huella imborrable en el fútbol sudamericano e internacional.</p>
+    </div>
+      <!-- Image Carousel -->
+  <div id="carruselContainer">
+    <div><img src="https://media.contentapi.ea.com/content/www-easports/en_US/fifa/ultimate-team/news/2017/fut-17-tots-primera-division-argentina/_jcr_content/headerImages/image.img.jpg" alt="Imagen 1"></div>
+    <div><img src="https://www.kickalgor.com/wp-content/uploads/2020/11/BIG_Argentina.svg.png" alt="Imagen 2"></div>
+    <div><img src="https://images.pagina12.com.ar/styles/focal_3_2_960x640/public/2024-06/839769-pelota-2.jpg?h=b3660f0d&itok=x0Lns2tQ" alt="Imagen 3"></div>
+  </div>
+
+    <div class="historia">
+        <h2>Grandes Momentos de la Liga Argentina</h2>
+        <p> <strong>1931 - La Profesionalización del Fútbol</strong><br> En 1931, la Liga Argentina se profesionalizó, marcando un hito en el fútbol argentino. Este cambio permitió que el torneo adquiriera una estructura más organizada y competitiva, lo que sentó las bases para el crecimiento del fútbol en el país.</p>
+        <p> <strong>1970 - La Era Dorada de Independiente</strong><br> En la década de 1970, Independiente dominó el fútbol argentino y sudamericano, ganando varios títulos de la Liga y de la Copa Libertadores. Este período es recordado como una de las épocas más exitosas en la historia del club.</p>
+        <p> <strong>1981 - La Consagración de Diego Maradona</strong><br> Diego Maradona, uno de los jugadores más icónicos de la historia del fútbol, tuvo una temporada memorable en 1981 con Boca Juniors. Su habilidad y talento llevaron al equipo a ganar el campeonato de la Liga Argentina, dejando una marca indeleble en la historia del club.</p>
+        <p> <strong>1990 - La Rivalidad entre Boca Juniors y River Plate</strong><br> La rivalidad entre Boca Juniors y River Plate ha sido una de las más intensas en el fútbol argentino. En 1990, ambos equipos se enfrentaron en una final de la Liga Argentina, en un partido que se convirtió en uno de los más memorables de la historia del torneo.</p>
+        <p> <strong>2014 - La Victoria de River Plate en el Torneo Final</strong><br> En 2014, River Plate ganó el Torneo Final, consolidando su estatus como uno de los clubes más exitosos de la Liga Argentina. La temporada fue destacada por la excelente actuación del equipo y por el regreso a la cima del fútbol argentino.</p>
+        <p>La Liga Argentina ha sido una plataforma crucial para el desarrollo del fútbol en el país y ha contribuido significativamente al éxito de la selección nacional en torneos internacionales. Su historia está llena de momentos emocionantes y jugadores legendarios que han definido el fútbol sudamericano.</p>
+    </div>
+    
+    <div class="video">
+        <h2>Video destacado</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/S022i5DrBkg?si=yrGbQovZNbVgzGe8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+  <div id="Ing">
+    <p>Diseño web - Katheryn</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

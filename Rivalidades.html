@@ -15,178 +15,194 @@
 
 <style>
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-color: #f5f5f5;
-    text-align: center;
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  text-align: center;
+}
 
-  #Contenedor {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: none; 
-  }
+#Contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: none; 
+}
 
-  #encabezado {
-    width: 100%;
-    height: 150px;
-    background-image: url('Imagenes/Encabezado.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative; 
-  }
+#encabezado {
+  width: 100%;
+  height: 150px;
+  background-image: url('Imagenes/Encabezado.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative; 
+}
 
-  #encabezado::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-  }
+#encabezado::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
 
-  #menu {
-    width: 100%;
-    background-color: #1e3d59;
-    z-index: 1000;
-  }
+#menu {
+  width: 100%;
+  background-color: #1e3d59;
+  z-index: 1000;
+}
 
-  #MenuBar1 {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
+#MenuBar1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
 
-  #MenuBar1 > li {
-    position: relative;
-  }
+#MenuBar1 > li {
+  position: relative;
+}
 
-  #MenuBar1 > li > a {
-    color: #fff;
-    text-decoration: none;
-    padding: 20px;
-    display: block;
-    font-weight: 700;
-    transition: background 0.3s;
-  }
+#MenuBar1 > li > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  display: block;
+  font-weight: 700;
+  transition: background 0.3s;
+}
 
-  #MenuBar1 > li:hover > a {
-    background-color: #16324f;
-  }
+#MenuBar1 > li:hover > a {
+  background-color: #16324f;
+}
 
-  #MenuBar1 ul {
-    list-style: none;
-    z-index: 1000;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    display: none;
-    background-color: #1e3d59;
-    min-width: 200px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+#MenuBar1 ul {
+  list-style: none;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  display: none;
+  background-color: #1e3d59;
+  min-width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  #MenuBar1 > li:hover > ul {
-    display: block;
-  }
+#MenuBar1 > li:hover > ul {
+  display: block;
+}
 
-  #MenuBar1 ul li {
-    margin: 0;
-  }
+#MenuBar1 ul li {
+  margin: 0;
+}
 
-  #MenuBar1 ul li a {
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-  }
+#MenuBar1 ul li a {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
 
-  #MenuBar1 ul li a:hover {
-    background-color: #16324f;
-  }
+#MenuBar1 ul li a:hover {
+  background-color: #16324f;
+}
 
-  #body {
-    padding: 40px 20px;
-  }
+#body {
+  padding: 50px 30px;
+  text-align: center;
+}
 
-  #body h1 {
-    margin-bottom: 40px;
-    font-size: 2.5rem;
-  }
+#body h1 {
+  margin-bottom: 40px;
+  font-size: 3rem; /* Tamaño del encabezado */
+  text-align: center;
+}
 
-  .rivalidad {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-  }
+.rivalidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
 
-  .rivalidad img {
-    max-width: 100%;
-    max-height: 400px;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
-  }
+.rivalidad h2 {
+  font-size: 2rem; /* Tamaño del subencabezado */
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-  #Ing {
-    width: 100%;
-    background-color: #1e3d59;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-  }
+.rivalidad p {
+  font-size: 1.2rem; /* Tamaño del texto de párrafo */
+  line-height: 1.6;
+  max-width: 800px; /* Ancho máximo del texto */
+  text-align: center;
+}
 
-  #Ing p {
-    margin: 0;
-    font-weight: 700;
-  }
+.rivalidad img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+}
 
-  #Ing img {
-    width: 30px;
-    height: 30px;
-    background-color: #fff; 
-    padding: 5px;
-    border-radius: 50%;
-    transition: transform 0.3s;
-  }
+#Ing {
+  width: 100%;
+  background-color: #1e3d59;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
 
-  #Ing a:hover img {
-    transform: scale(1.1);
-  }
+#Ing p {
+  margin: 0;
+  font-weight: 700;
+}
 
-  footer {
-    background-color: #1e3d59;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
+#Ing img {
+  width: 30px;
+  height: 30px;
+  background-color: #fff; 
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
 
-  .slick-dots li button:before {
-    color: #1e3d59;
-  }
+#Ing a:hover img {
+  transform: scale(1.1);
+}
 
-  .slick-prev:before, .slick-next:before {
-    color: #1e3d59;
-    font-size: 30px;
-  }
+footer {
+  background-color: #1e3d59;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.slick-dots li button:before {
+  color: #1e3d59;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #1e3d59;
+  font-size: 30px;
+}
+
 </style>
 
 </head>
@@ -296,7 +312,7 @@
     
     <div class="rivalidad">
       <h2>Boca Juniors vs River Plate</h2>
-      <img src="https://cdn2.telediario.mx/uploads/media/2024/04/14/1280x720_339855.jpeg" alt="Boca Juniors vs River Plate">
+      <img src="https://artwork.espncdn.com/airings/7a80168b-7bd0-417c-9b84-f5ddd6692786/16x9/original_20210310003733.jpg" alt="Boca Juniors vs River Plate">
       <p>El Superclásico argentino enfrenta a Boca Juniors y River Plate en una de las rivalidades más apasionadas del fútbol. Los encuentros entre estos dos gigantes del fútbol argentino son esperados con gran anticipación por sus aficionados...</p>
     </div>
   </div>

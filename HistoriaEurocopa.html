@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Historia de la Eurocopa</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: none; 
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 150px;
+    background-image: url('Imagenes/Encabezado.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+  }
+
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+    z-index: 1000;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 > li {
+    position: relative;
+  }
+
+  #MenuBar1 > li > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 > li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  #MenuBar1 > li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  #body h1 {
+    margin-bottom: 40px;
+    font-size: 3rem; /* Tamaño del encabezado */
+    text-align: center;
+  }
+
+  .historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .historia h2 {
+    font-size: 2rem; /* Tamaño del subencabezado */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .historia p {
+    font-size: 1.2rem; /* Tamaño del texto de párrafo */
+    line-height: 1.6;
+    max-width: 800px; /* Ancho máximo del texto */
+    text-align: center;
+  }
+
+  .historia img {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .video {
+    margin: 40px 0;
+  }
+
+  .video iframe {
+    width: 80%;
+    height: 450px;
+    border: none;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    background-color: #fff; 
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .slick-dots li button:before {
+    color: #1e3d59;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #1e3d59;
+    font-size: 30px;
+  }
+</style>
+
+</head>
+<body>
+    <div id="Contenedor">
+      <div id="encabezado"></div>
+      
+      <div id="menu">
+        <ul id="MenuBar1" class="MenuBarHorizontal">
+          <li><a href="index.html">Inicio</a>
+            <ul>
+              <li><a href="Autores.html">Autores</a></li>
+            </ul>
+          </li>
+          <li><a href="Historia_Mundial.html">Historias</a>
+            <ul>
+              <li><a href="HistoriaLiga.html">Historia</a></li>
+              <li><a href="Historia_Confederaciones.html">Historia de las Confederaciones</a></li>
+              <li><a href="Historia_Copa_America.html">Historia Copa América</a></li>
+              <li><a href="HistoriaEurocopa.html">Historia Eurocopa</a></li>
+              <li><a href="HistoriaLiga.html">Historia Liga</a></li>
+              <li><a href="HistoriaPremierL.html">Historia Premier</a></li>
+              <li><a href="Rivalidades.html">Rivalidades Históricas</a></li>
+              <li><a href="Grandes_Momentos_Fut.html">Grandes Momentos del Fútbol</a></li>
+            </ul>
+          </li>
+          <li><a href="Liga_española.html">Liga Española</a>
+            <ul>
+              <li><a href="HistoriaLiga.html">Historia</a></li>
+              <li><a href="NoticiasLiga.html">Noticias</a></li>
+              <li><a href="PartidosLiga.html">Partidos</a></li>
+              <li><a href="ResultadosLiga.html">Resultados</a></li>
+              <li><a href="ClasificacionLiga.html">Clasificación</a></li>
+              <li><a href="FichajesLiga.html">Fichajes</a></li>
+              <li><a href="GolesLiga.html">Los Mejores Goles</a></li>
+              <li><a href="horarios.html">Horarios en Vivo</a></li>
+              <li><a href="narradores.html">Nuestros Narradores</a></li>
+              <li><a href="pronostico.html">Nuestros Pronósticos</a></li>
+            </ul>
+          </li>
+          <li><a href="informacion_de_hoy.html">Información de Hoy</a>
+            <ul>
+              <li><a href="Partidos_Hoy.html">Partidos de hoy</a></li>
+              <li><a href="Juegos.html">Videojuegos</a></li>
+              <li><a href="Noticias.html">Noticias</a></li>
+              <li><a href="entrevistas.html">Entrevistas</a></li>
+              <li><a href="Futbol_femenino.html">Fútbol Femenino</a></li>
+              <li><a href="otras_paginas.html">Otras Páginas</a></li>
+            </ul>
+          </li>
+          <li><a href="Liga_nacional/Liga_nacional.html">Liga Nacional</a>
+            <ul>
+              <li><a href="Liga_nacional/Liga_2023.html">Liga 2023</a>
+                <ul>
+                  <li><a href="Liga_nacional/Trayectoria.html">Trayectoria</a></li>
+                  <li><a href="Liga_nacional/Desempeño.html">Desempeño</a></li>
+                </ul>
+              </li>
+              <li><a href="Liga_nacional/Ultimas_not.html">Últimas Noticias</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div id="body">
+        <h1>Historia de la Eurocopa</h1>
+        
+        <div class="historia">
+            <h2>Origen de la Eurocopa</h2>
+            <p>La Eurocopa, oficialmente conocida como el Campeonato Europeo de Naciones, fue creada en 1960 por la Unión de Asociaciones Europeas de Fútbol (UEFA). El torneo se celebró por primera vez en Francia y fue ganado por la Unión Soviética. La idea original era reunir a las mejores selecciones nacionales de Europa para competir en un campeonato que se celebrara cada cuatro años. En sus primeras ediciones, el torneo no contaba con una fase de clasificación como la conocemos hoy, y los equipos se clasificaban a través de invitaciones directas.</p>
+            <p>A lo largo de los años, el formato del torneo ha evolucionado considerablemente. Inicialmente, solo participaron 4 equipos en la fase final, pero a medida que creció el interés y la calidad del fútbol europeo, la UEFA decidió ampliar el torneo. En 1996, en Inglaterra, el torneo pasó a incluir 16 equipos. A partir de 2016, en Francia, el número de participantes se amplió a 24 equipos, permitiendo una mayor inclusión y competitividad.</p>
+            <p>La Eurocopa ha tenido un impacto significativo en el fútbol europeo, destacándose no solo por la calidad de los partidos, sino también por su capacidad para impulsar carreras de jugadores y entrenadores. Además, el torneo ha sido testigo de algunos de los momentos más memorables en la historia del fútbol, como la famosa victoria de Grecia en 2004, que sorprendió a muchos.</p>
+            <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/06/11/17181193614762.jpg" alt="Eurocopa">
+        </div>
+        
+        <div class="historia">
+            <h2>Grandes Momentos de la Eurocopa</h2>
+            <p> <strong>1964 - El Primer Campeón: España</strong><br> España ganó el primer torneo en 1964, derrotando a la Unión Soviética en la final con un gol de Luis Suárez. Este triunfo marcó el inicio de una serie de éxitos para la selección española en competiciones internacionales.</p>
+            <p> <strong>1996 - La Magia de Inglaterra</strong><br> En la Eurocopa de 1996, celebrada en Inglaterra, el torneo fue testigo de la famosa "Penalti de la Victoria" de Gareth Southgate y la memorable actuación de Alan Shearer, quien terminó como máximo goleador del torneo.</p>
+            <p> <strong>2000 - La Victoria de Francia</strong><br> La Eurocopa 2000, celebrada en Bélgica y los Países Bajos, vio a Francia ganar el título con una impresionante actuación de Zinedine Zidane, quien anotó dos goles de penalti en la final contra Italia.</p>
+            <p> <strong>2004 - La Sorpresa de Grecia</strong><br> Uno de los mayores logros inesperados en la historia de la Eurocopa fue la victoria de Grecia en 2004. El equipo griego, dirigido por Otto Rehhagel, derrotó a Portugal en la final con un gol de Angelos Charisteas, en una sorpresa monumental para el fútbol europeo.</p>
+            <p> <strong>2016 - El Triunfo de Portugal</strong><br> En 2016, Portugal ganó su primer título de la Eurocopa al vencer a Francia en la final, con un gol en la prórroga de Eder. La victoria fue especialmente significativa ya que el capitán Cristiano Ronaldo se vio obligado a abandonar el partido por lesión.</p>
+            <p>La Eurocopa también ha tenido un impacto cultural y mediático considerable. La cobertura mediática del torneo y la creciente popularidad de los jugadores han contribuido a la globalización del fútbol y a aumentar la visibilidad de las ligas europeas.</p>
+            <img src="https://estaticos-cdn.prensaiberica.es/clip/586275de-8383-40e6-97bd-7fc86872abd7_16-9-discover-aspect-ratio_default_0.jpg" alt="Grandes Momentos Eurocopa">
+        </div>
+        
+        <div class="video">
+            <h2>Video destacado</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zv0axlHk48g?si=XY1CrbSbr4fEoYo0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+      
+    <div id="Ing">
+        <p>Diseño web - Katheryn</p>
+        <a href="https://www.youtube.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+        </a>
+        <a href="https://www.google.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+        </a>
+        <a href="https://www.whatsapp.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </a>
+      </div>
+    
+      <footer>
+        &copy; 2024 Todos los derechos reservados.
+      </footer>
+    </div>
+
+    <!-- Slick Carousel Initialization -->
+    <script>
+      $(document).ready(function(){
+        $('.slick-carousel').slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+        });
+      });
+    </script>
+
+</body>
+</html>

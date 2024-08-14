@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mejores Entrenadores</title>
+<style type="text/css">
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  #Contenedor {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #encabezado {
+    width: 100%;
+    height: 150px;
+    background-color: #ffffff;
+    background-image: url(../Imagenes/Baner.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  #menu {
+    width: 100%;
+    background-color: #333;
+  }
+  #menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  #menu ul li {
+    position: relative;
+  }
+  #menu ul li a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  #menu ul li a:hover, #menu ul li ul li a:hover {
+    background-color: #555;
+  }
+  #menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 0;
+  }
+  #menu ul li:hover ul {
+    display: block;
+  }
+  #body {
+    padding: 20px;
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+  }
+  .entrenadores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .entrenador {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .entrenador img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+  #Ing {
+    width: 100%;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+    clear: both;
+  }
+  #footer {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+  }
+  #footer p {
+    margin: 5px 0;
+  }
+  #footer img {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="#">Estadísticas</a>
+        <ul>
+          <li><a href="EstadisticasJugadores.html">Estadísticas de Jugadores</a></li>
+          <li><a href="EstadisticasEquipos.html">Estadísticas de Equipos</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Historia y Cultura</a>
+        <ul>
+          <li><a href="HistoriaArbitraje.html">Historia del Arbitraje</a></li>
+          <li><a href="HistoriaFIFA.html">Historia de la FIFA</a></li>
+          <li><a href="FutubolCultura.html">Futbol y Cultura</a></li>
+          <li><a href="FutubolPolitica.html">Futbol y Politica</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Jugadores y Entrenadores</a>
+        <ul>
+          <li><a href="MejoresJugadoresHistoria.html">Mejores Jugadores</a></li>
+           <li><a href="MejoresEntrenadores.html">Mejores Entrenadores</a></li
+          ><li><a href="Jugadores_Jovenes.html">Jugadores Promesas</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Otros</a>
+        <ul>
+          <li><a href="RegistroRecords.html">Registro de Records</a></li>
+          <li><a href="Ligas_Juveniles.html">Ligas Juveniles</a></li>
+          <li><a href="FutubolTecnologia.html">Futbol y Tecnologia</a></li>
+          <li><a href="FutubolEconomia.html">Futbol y Economia</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="body">
+    <p><strong>Mejores Entrenadores</strong></p>
+    <p>Esta sección está dedicada a los entrenadores que han dejado una marca indeleble en la historia del fútbol. Aquí encontrarás información sobre sus estrategias, logros y el impacto que han tenido en sus equipos y el deporte en general.</p>
+    
+    <div class="entrenadores">
+      <!-- Entrenador 1 -->
+      <div class="entrenador">
+        <p><strong>Sir Alex Ferguson</strong></p>
+        <p>Uno de los entrenadores más exitosos de la historia, Sir Alex Ferguson dirigió al Manchester United durante más de 26 años, ganando numerosos títulos de liga y la Champions League. Es conocido por su habilidad para motivar a los jugadores y su longevidad en el cargo.</p>
+        <img class="imagen" src="Imagenes/ferguson.jpg" alt="Sir Alex Ferguson">
+      </div>
+
+      <!-- Entrenador 2 -->
+      <div class="entrenador">
+        <p><strong>José Mourinho</strong></p>
+        <p>Conocido como "The Special One", José Mourinho ha ganado títulos en múltiples ligas europeas, incluyendo la Premier League, La Liga y la Serie A. Es famoso por su estrategia defensiva y su capacidad para obtener resultados con diferentes equipos.</p>
+        <img class="imagen" src="Imagenes/mourinho.jpg" alt="José Mourinho">
+      </div>
+
+      <!-- Entrenador 3 -->
+      <div class="entrenador">
+        <p><strong>Carlo Ancelotti</strong></p>
+        <p>Carlo Ancelotti ha ganado la Champions League con varios clubes, incluyendo el AC Milan y el Real Madrid. Su estilo táctico y su capacidad para adaptarse a diferentes ligas lo han convertido en uno de los entrenadores más respetados en el fútbol mundial.</p>
+        <img class="imagen" src="Imagenes/ancelotti.jpg" alt="Carlo Ancelotti">
+      </div>
+
+      <!-- Entrenador 4 -->
+      <div class="entrenador">
+        <p><strong>Jürgen Klopp</strong></p>
+        <p>Conocido por su estilo de juego "gegenpressing", Jürgen Klopp ha llevado al Liverpool a ganar la Champions League y la Premier League. Su energía y pasión en el banquillo han inspirado a muchos jugadores y aficionados.</p>
+        <img class="imagen" src="Imagenes/klopp.jpg" alt="Jürgen Klopp">
+       </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+  <p>&copy; 2024 Andre - Clase de Desarrollo Web</p>
+  <p>
+    <a href="https://www.instagram.com/andre_strobe/" target="_blank">
+      <img src="icons/instagram-icon.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/cesarandre.ordones.9" target="_blank">
+      <img src="icons/facebook-icon.png" alt="Facebook">
+    </a>
+    <a href="https://twitter.com/your_twitter_handle" target="_blank">
+      <img src="icons/twitter-icon.png" alt="Twitter">
+    </a>
+    <a href="https://t.me/your_telegram_handle" target="_blank">
+      <img src="icons/telegram-icon.png" alt="Telegram">
+    </a>
+  </p>
+</div>
+
+</div>
+</body>
+</html>
