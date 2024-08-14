@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tácticas y Formaciones</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  /* Resetting default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Overlay for header */
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .tactica-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .tactica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tactica img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tactica h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5em;
+  }
+
+  .tactica p {
+    max-width: 800px;
+    font-size: 1em;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="EstadiosFamosos.html">Estadios Famosos</a></li>
+      <li><a href="Copa y Trofeos.html">Copas y Trofeos</a></li>
+      <li><a href="Grandes Finales.html">Grandes Finales</a></li>
+      <li><a href="LigasFemeninas.html">Ligas Femeninas</a></li>
+      <li><a href="HistoriaUEFA.html">Historia de la UEFA</a></li>
+      <li><a href="TacticasFormaciones.html">Tácticas y Formaciones</a></li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h2>Tácticas y Formaciones</h2>
+    <p>En el fútbol, las tácticas y formaciones son esenciales para el éxito de un equipo. Cada táctica tiene su propio enfoque y objetivos estratégicos, mientras que las formaciones determinan la disposición de los jugadores en el campo.</p>
+
+    <div class="tactica-container">
+      <!-- Táctica 1 -->
+      <div class="tactica">
+        <img src="Imagenes/442.jpg" alt="Imagen 2" width="1200" height="600">
+        <h3>Formación 4-4-2</h3>
+        <p>La formación 4-4-2 es una de las formaciones más tradicionales y utilizadas en el fútbol. Consiste en cuatro defensores, cuatro mediocampistas y dos delanteros, proporcionando un equilibrio sólido entre defensa y ataque.</p>
+      </div>
+
+      <!-- Táctica 2 -->
+      <div class="tactica">
+        <img src="Imagenes/433.jpg" alt="Imagen 2" width="1200" height="600">
+        <h3>Formación 4-3-3</h3>
+        <p>La formación 4-3-3 se enfoca en un juego ofensivo, con tres delanteros y tres mediocampistas que proporcionan apoyo en ataque. Esta formación permite presionar al equipo contrario y ofrecer múltiples opciones ofensivas.</p>
+      </div>
+
+      <!-- Táctica 3 -->
+      <div class="tactica">
+        <img src="Imagenes/352.jpg" alt="Imagen 2" width="1200" height="600">
+        <h3>Formación 3-5-2</h3>
+        <p>La formación 3-5-2 utiliza tres defensores y cinco mediocampistas, con dos delanteros. Esta táctica enfatiza el control del medio campo y ofrece una sólida defensa mientras permite una mayor flexibilidad en el ataque.</p>
+      </div>
+
+      <!-- Táctica 4 -->
+      <div class="tactica">
+         <img src="Imagenes/532.jpg" alt="Imagen 2" width="1200" height="600">
+        <h3>Formación 5-3-2</h3>
+        <p>La formación 5-3-2 se centra en una defensa fuerte con cinco defensores, y tres mediocampistas que apoyan tanto en defensa como en el ataque. Es ideal para equipos que priorizan la solidez defensiva.</p>
+      </div>
+
+      <!-- Táctica 5 -->
+      <div class="tactica">
+        <img src="Imagenes/4231.jpg" alt="Imagen 2" width="1200" height="600">
+        <h3>Formación 4-2-3-1</h3>
+        <p>La formación 4-2-3-1 proporciona un equilibrio entre defensa y ataque con cuatro defensores, dos mediocampistas defensivos, tres mediocampistas ofensivos y un delantero. Es versátil y permite varias estrategias durante el partido.</p>
+      </div>
+
+      <!-- Táctica 6 -->
+      <div class="tactica">
+       <img src="Imagenes/4411.jpg" alt="Imagen 2" width="1200" height="600">
+        <h3>Formación 4-4-1-1</h3>
+        <p>La formación 4-4-1-1 utiliza un mediocampista defensivo (o ancla) delante de los cuatro defensores y cuatro mediocampistas que apoyan en el ataque. Esta formación ofrece estabilidad defensiva y permite un control efectivo del centro del campo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Liga Nacional</title>
+<!-- Enlaces y estilos comunes -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<style>
+  /* Estilos comunes */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(../Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+  #body {
+    padding: 40px 20px;
+  }
+  #body h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  #body img {
+    max-width: 100%;
+    height: auto;
+  }
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .slick-dots li button:before {
+    color: #1e3d59;
+  }
+  .slick-prev:before, .slick-next:before {
+    color: #1e3d59;
+    font-size: 30px;
+  }
+</style>
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="../index.html">Inicio</a>
+        <ul>
+          <li><a href="../Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="../Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="../HistoriaLiga.html">Historia</a></li>
+          <li><a href="../NoticiasLiga.html">Noticias</a></li>
+          <li><a href="../PartidosLiga.html">Partidos</a></li>
+          <li><a href="../ResultadosLiga.html">Resultados</a></li>
+          <li><a href="../ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="../FichajesLiga.html">Fichajes</a></li>
+          <li><a href="../GolesLiga.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+      <li><a href="../informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="../Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="../Juegos.html">Videojuegos</a></li>
+          <li><a href="../Noticias.html">Noticias</a></li>
+          <li><a href="../entrevistas.html">Entrevistas</a></li>
+          <li><a href="../Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="../otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Desempeño.html">Desempeño</a></li>
+              <li><a href="Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="../LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="../HistoriaPremierL.html">Historia</a></li>
+          <li><a href="../NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="../PartidosPremierL.html">Partidos</a></li>
+          <li><a href="../ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="../ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="../FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="../GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="body">
+    <h2>Liga Nacional Hondureña</h2>
+    <p>La liga nacional hondureña, también conocida como Liga Betcris por el nombre de su patrocinador, es el torneo de fútbol profesional más importante de Honduras. Esta liga se fundó el 10 de mayo de 1964 y su primer torneo se llevó a cabo en 1965, con la participación de 10 clubes. Actualmente, la liga cuenta con 10 equipos que compiten en dos torneos por temporada: el Apertura y el Clausura.</p>
+    <div class="estadio">
+      <img src="../Imagenes/principal_campeones-de-la-liga-1965.png" alt="liga nacional 1965">
+      <div class="estadio-content">
+        <h3>Liga Nacional 1965</h3>
+        <p>En el año 1965, el primer torneo de la Liga Nacional Hondureña fue inaugurado con la participación de 10 equipos. Este torneo marcó el inicio de una rica historia en el fútbol hondureño.</p>
+      </div>
+    </div>
+    <div class="slider">
+      <div><img src="../Imagenes/escudo-1.png" alt="escudo 1"></div>
+      <div><img src="../Imagenes/escudo-2.png" alt="escudo 2"></div>
+      <div><img src="../Imagenes/escudo-3.png" alt="escudo 3"></div>
+      <div><img src="../Imagenes/escudo-4.png" alt="escudo 4"></div>
+    </div>
+  </div>
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://twitter.com/"><img src="../Imagenes/twitter-icon.png" alt="Twitter"></a>
+    <a href="https://facebook.com/"><img src="../Imagenes/facebook-icon.png" alt="Facebook"></a>
+    <a href="https://instagram.com/"><img src="../Imagenes/instagram-icon.png" alt="Instagram"></a>
+  </div>
+  <footer>
+    <p>&copy; 2024 Liga Nacional Hondureña. Todos los derechos reservados.</p>
+  </footer>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

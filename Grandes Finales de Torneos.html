@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grandes Finales de Torneos</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  /* Resetting default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Overlay for header */
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .final {
+    margin-bottom: 30px;
+  }
+
+  .final-content {
+    margin-top: 15px;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Slick Carousel Customization */
+  .slick-dots li button:before {
+    color: #1e3d59;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #1e3d59;
+    font-size: 30px;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="EstadiosFamosos.html">Estadios Famosos</a></li>
+      <li><a href="Copa y Trofeos.html">Copas y Trofeos</a></li>
+      <li><a href="Grandes Finales.html">Grandes Finales</a></li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h2>Grandes Finales de Torneos</h2>
+    <p>Revive algunos de los momentos más emocionantes en la historia del fútbol a través de estas grandes finales de torneos internacionales.</p>
+
+    <!-- Final 1 -->
+    <div class="final">
+      <h3>Final de la UEFA Champions League 1999</h3>
+      <p>La final de la UEFA Champions League de 1999, disputada en el Camp Nou, es recordada por la increíble remontada del Manchester United contra el Bayern Munich. Con goles de Teddy Sheringham y Ole Gunnar Solskjær en los minutos finales, el Manchester United se llevó el título en una de las finales más dramáticas de la historia.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/oTgaI5QbNLc?si=wbnAQYYehPokhS-9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 2 -->
+    <div class="final">
+      <h3>Final de la Copa Mundial de la FIFA 2014</h3>
+      <p>La final de la Copa Mundial de 2014, celebrada en Brasil, se decidió en tiempo extra con un gol de Mario Götze para Alemania. El tanto de Götze le dio a Alemania su cuarto título mundial, venciendo a Argentina en un partido muy reñido.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/nD2bvnSdyMo?si=DBiQvTljyL-QGmh9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 3 -->
+    <div class="final">
+      <h3>Final de la Copa Libertadores 2018</h3>
+      <p>La final de la Copa Libertadores 2018, entre River Plate y Boca Juniors, es famosa por su emocionante vuelta. El partido de vuelta, originalmente programado para jugarse en el estadio Monumental, se trasladó al Santiago Bernabéu en Madrid debido a incidentes violentos en Buenos Aires. River Plate se coronó campeón tras ganar en los penales.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4YKa-hQqDm8?si=HOK5sABym17TZwIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 4 -->
+    <div class="final">
+      <h3>Final de la FA Cup 2006</h3>
+      <p>La final de la FA Cup de 2006 entre Liverpool y West Ham United fue una de las más emocionantes en la historia reciente del torneo. Liverpool logró igualar el partido en los minutos finales con un gol de Steven Gerrard y ganó en la tanda de penales, con el partido siendo recordado por la dramática remontada.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/OshGJy2IgX4?si=RfpZgRqs5ux_z8sI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 5 -->
+    <div class="final">
+      <h3>Final de la Copa América 2015</h3>
+      <p>La final de la Copa América 2015 fue histórica para Chile, ya que el equipo ganó su primer título en el torneo al vencer a Argentina en los penales. El partido, celebrado en el Estadio Nacional de Santiago, terminó 0-0 después del tiempo reglamentario y la prórroga, y Chile se impuso en la tanda de penales.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/ATXMJOEt6zc?si=Ops7q1Ja6auPJ8r2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 6 -->
+    <div class="final">
+      <h3>Final de la Eurocopa 2016</h3>
+      <p>Portugal ganó su primer título importante al vencer a Francia en la final de la Eurocopa 2016. El único gol del partido fue anotado por Eder en tiempo extra, brindando a Portugal una victoria memorable y sorpresiva en el Stade de France.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bpWvWGFikXA?si=FkKGc6yU7c8pVMlO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 7 -->
+    <div class="final">
+      <h3>Final de la Copa Mundial de Clubes 2010</h3>
+      <p>La final de la Copa Mundial de Clubes de 2010 vio al Inter de Milán coronarse campeón tras vencer a Mazembe con un gol de Diego Milito. El torneo, celebrado en Abu Dhabi, destacó la calidad del fútbol europeo frente a los campeones continentales de otros lugares.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/oh3baDi1KGE?si=ju39xKL780hkS1jE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 8 -->
+    <div class="final">
+      <h3>Final de la Copa Confederaciones 2013</h3>
+      <p>En la final de la Copa Confederaciones 2013, Brasil demostró su dominio al vencer a España 3-0 en el Estadio Maracaná. La actuación estelar de Neymar y la sólida defensa brasileña aseguraron una victoria convincente sobre los campeones del mundo.</p>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/VwOiLdKqQgs?si=pgQ30KSWKKPu6Jqe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 9 -->
+    <div class="final">
+      <h3>Final de la Copa Mundial 1998</h3>
+      <p>La final de la Copa Mundial de 1998, disputada en el Stade de France, fue ganada por Francia al derrotar a Brasil 3-0. Fue el primer título mundial para Francia, y Zinedine Zidane se destacó con dos goles de cabeza en el primer tiempo.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/QsEEAvgBqos?si=nTLh7xqLWbMv_gBI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Final 10 -->
+    <div class="final">
+      <h3>Final de la UEFA Super Cup 2014</h3>
+      <p>La UEFA Super Cup 2014, disputada en Cardiff, vio a Real Madrid vencer a Sevilla 2-0. Los goles de Cristiano Ronaldo y Javier Hernández aseguraron el título para el equipo merengue, demostrando su calidad y forma al inicio de la nueva temporada europea.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VpcEc41A4T0?si=MsBTnYrVxlUoDB3B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2023 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

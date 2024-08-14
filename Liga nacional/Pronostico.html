@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pronóstico Liga Apertura 2023-2024</title>
+<!-- Enlaces y estilos comunes -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<style>
+  /* Estilos comunes */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(../Imagenes/Encabezado.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+  #body {
+    padding: 40px 20px;
+  }
+  #body header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  #imagen, #Img {
+    width: 100%;
+    max-width: 210px;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+</style>
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="../index.html">Inicio</a>
+        <ul>
+          <li><a href="../Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="../Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="../HistoriaLiga.html">Historia</a></li>
+          <li><a href="../NoticiasLiga.html">Noticias</a></li>
+          <li><a href="../PartidosLiga.html">Partidos</a></li>
+          <li><a href="../ResultadosLiga.html">Resultados</a></li>
+          <li><a href="../ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="../FichajesLiga.html">Fichajes</a></li>
+          <li><a href="../GolesLiga.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+      <li><a href="../informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="../Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="../Juegos.html">Videojuegos</a></li>
+          <li><a href="../Noticias.html">Noticias</a></li>
+          <li><a href="../entrevistas.html">Entrevistas</a></li>
+          <li><a href="../Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="../otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Desempeño.html">Desempeño</a></li>
+              <li><a href="Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="../LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="../HistoriaPremierL.html">Historia</a></li>
+          <li><a href="../NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="../PartidosPremierL.html">Partidos</a></li>
+          <li><a href="../ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="../ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="../FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="../GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <header>Pronóstico Liga Apertura 2023-2024</header>
+    <div id="imagen" style="background-image: url('../Imagenes/ima1.jpg');"></div>
+    <p>¿Quién será el campeón del torneo apertura 2023-2024 de la liga nacional hondureña? Esta es la pregunta que se hacen todos los aficionados al fútbol en el país, que esperan con ansias el desenlace de la competencia más importante del balompié nacional. En este artículo, te presentamos nuestro pronóstico sobre la final del torneo, basado en el análisis del rendimiento de los equipos y los jugadores, y en las estadísticas y los datos objetivos.</p>
+    <p>La final del torneo apertura 2023-2024 se jugará entre el Olimpia y el Motagua, los dos equipos más grandes y exitosos del país, que se han enfrentado en 12 finales anteriores, con 7 títulos para el Olimpia y 5 para el Motagua. El Olimpia llega a la final como el gran favorito, tras terminar la fase regular como líder invicto, con 48 puntos en 18 partidos, 15 victorias y 3 empates, con una diferencia de goles de +30. El Motagua, por su parte, terminó en la tercera posición, con 40 puntos en 18 partidos, 12 victorias, 4 empates y 2 derrotas, con una diferencia de goles de +20.</p>
+    <p>Ambos equipos cuentan con plantillas muy completas y competitivas, con jugadores de gran calidad y experiencia, que han demostrado su nivel en el torneo y en competiciones internacionales. El Olimpia tiene en su nómina a algunos de los mejores futbolistas del país, como el delantero Jerry Bengtson, el mediocampista Rubilio Castillo y el defensa Eryc Castillo. El Motagua también cuenta con figuras destacadas, como el delantero Roberto Moreira, el mediocampista Luis Palma y el defensa Juan Pablo Montes.</p>
+    <p>En cuanto al desempeño de los equipos en los partidos directos, el Olimpia ha sido el equipo que ha dominado la serie histórica contra el Motagua, con 25 victorias, 15 empates y 22 derrotas en 62 partidos disputados. Sin embargo, el Motagua ha demostrado su capacidad para enfrentar al Olimpia en instancias decisivas, ganando 3 de las 4 finales que ha disputado contra él.</p>
+    <p>En nuestra opinión, el Olimpia es el equipo que tiene mayores posibilidades de ganar el torneo apertura 2023-2024, debido a su gran rendimiento en la fase regular, su plantilla de calidad y su historial favorable en la serie contra el Motagua. Sin embargo, el Motagua no será un rival fácil, y tendrá sus opciones si logra aprovechar sus fortalezas y corregir sus debilidades. La final será un duelo muy emocionante y disputado, que se definirá por detalles y por el nivel de los jugadores en el campo.</p>
+  </div>
+
+  <div id="Ing">
+    <p>Diseño Web-JahirCorrales-Visítanos en nuestras redes sociales:</p>
+    <a href="https://www.facebook.com/">
+      <img src="../Imagenes/Facebook.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/">
+      <img src="../Imagenes/Instagram.png" alt="Instagram">
+    </a>
+    <a href="https://www.twitter.com/">
+      <img src="../Imagenes/Twitter.png" alt="Twitter">
+    </a>
+    <a href="https://www.linkedin.com/">
+      <img src="../Imagenes/LinkedIn.png" alt="LinkedIn">
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
+

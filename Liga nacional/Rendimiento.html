@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Requerimiento</title>
+<!-- Enlaces y estilos comunes -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #004080; /* Color azul oscuro */
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  #Contenedor {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  #encabezado {
+    height: 150px;
+    background: url('../Imagenes/Encabezado.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  #menu {
+    background-color: #004080; /* Color azul oscuro */
+    padding: 10px 0;
+  }
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 10px;
+  }
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+  #MenuBar1 a:hover {
+    background-color: #003366; /* Azul más oscuro */
+  }
+  #MenuBar1 ul {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #004080; /* Color azul oscuro */
+    padding: 10px 0;
+    list-style: none;
+    margin: 0;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+  }
+  #MenuBar1 ul li a:hover {
+    background-color: #003366; /* Azul más oscuro */
+  }
+  #body {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    line-height: 1.6;
+  }
+  #imagen, #Img {
+    width: 100%;
+    max-width: 210px;
+    height: 370px;
+    background-size: cover;
+    transition: background-image 0.5s ease;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  #imagen {
+    background: url('../Imagenes/ima1.jpg') no-repeat center center;
+  }
+  #Img {
+    background: url('../Imagenes/img1.jpg') no-repeat center center;
+  }
+  #Ing {
+    background-color: #004080; /* Color azul oscuro */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+  }
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+  #Ing a {
+    color: #fff;
+    margin: 0 10px;
+  }
+  #Ing a img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+  #Ing a:hover {
+    text-decoration: underline;
+  }
+  footer {
+    background-color: #004080; /* Color azul oscuro */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Cambio de imagen en base a la posición del ratón sobre los párrafos
+    var defaultImage = "url('../Imagenes/ima1.jpg')";
+    $("#body p").hover(function() {
+      var index = $(this).index();
+      var imageUrl = "../Imagenes/ima" + (index < 2 ? "1" : index < 4 ? "2" : "3") + ".jpg";
+      $("#imagen").css("background-image", "url(" + imageUrl + ")");
+    }, function() {
+      $("#imagen").css("background-image", defaultImage);
+    });
+
+    // Cambio de imagen automática
+    var imgIndex = 1;
+    setInterval(function() {
+      imgIndex = (imgIndex % 3) + 1;
+      $("#Img").css("background-image", "url('../Imagenes/img" + imgIndex + ".jpg')");
+    }, 3000);
+  });
+</script>
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="../index.html">Inicio</a>
+        <ul>
+          <li><a href="../Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="../Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="../HistoriaLiga.html">Historia</a></li>
+          <li><a href="../NoticiasLiga.html">Noticias</a></li>
+          <li><a href="../PartidosLiga.html">Partidos</a></li>
+          <li><a href="../ResultadosLiga.html">Resultados</a></li>
+          <li><a href="../ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="../FichajesLiga.html">Fichajes</a></li>
+          <li><a href="../GolesLiga.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+      <li><a href="../informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="../Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="../Juegos.html">Videojuegos</a></li>
+          <li><a href="../Noticias.html">Noticias</a></li>
+          <li><a href="../entrevistas.html">Entrevistas</a></li>
+          <li><a href="../Futballl femenino.html">Fútbol Femenino</a></li>
+          <li><a href="../otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Desempeño.html">Desempeño</a></li>
+              <li><a href="Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Curiosidades y anecdotas.html">Curiosidades y Anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="../LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="../HistoriaPremierL.html">Historia</a></li>
+          <li><a href="../NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="../PartidosPremierL.html">Partidos</a></li>
+          <li><a href="../ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="../ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="../FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="../GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="body">
+    <header>Rendimiento de los equipos y los jugadores con otras ligas de la región</header>
+    <div class="Divliganacional" id="liganacional">
+      <p>La liga nacional hondureña, también conocida como Liga Betcris por el nombre de su patrocinador, presenta un perfil competitivo a nivel regional. A continuación, se presentan algunos aspectos destacados:</p>
+      <p>- La liga nacional hondureña ocupa la posición 52 en el ranking mundial, según la clasificación de la Federación Internacional de Fútbol Asociación (FIFA). Esto refleja un nivel de juego competitivo en comparación con otras ligas en América Central y el Caribe.</p>
+      <p>- En términos de goles por partido, la liga nacional hondureña tiene un promedio de 2.5 goles por juego, lo cual está ligeramente por debajo del promedio de 2.8 goles de otras ligas centroamericanas.</p>
+      <p>- En cuanto al desempeño de los jugadores, el máximo goleador de la liga nacional hondureña, con 15 goles en la temporada, se encuentra en el puesto 20 de los máximos goleadores a nivel regional.</p>
+      <p>- Comparado con la Liga MX de México, la cual tiene una media de 3.2 goles por partido, la liga nacional hondureña muestra una tendencia de menor ofensiva, pero una defensa más sólida con un promedio de 1.2 goles recibidos por partido.</p>
+    </div>
+    <div id="imagen"></div>
+    <div id="Img"></div>
+  </div>
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+  <footer>
+    &copy; 2023 Todos los derechos reservados.
+  </footer>
+</div>
+</body>
+</html>

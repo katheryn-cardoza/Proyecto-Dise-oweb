@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Entrevistas Exclusivas</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  /* Resetting default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Overlay for header */
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .interview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .interview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .interview iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .interview h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5em;
+  }
+
+  .interview p {
+    max-width: 800px;
+    font-size: 1em;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="EstadiosFamosos.html">Estadios Famosos</a></li>
+      <li><a href="Copa y Trofeos.html">Copas y Trofeos</a></li>
+      <li><a href="Grandes Finales.html">Grandes Finales</a></li>
+      <li><a href="LigasFemeninas.html">Ligas Femeninas</a></li>
+      <li><a href="HistoriaUEFA.html">Historia de la UEFA</a></li>
+      <li><a href="TacticasFormaciones.html">Tácticas y Formaciones</a></li>
+      <li><a href="GrandesMomentos.html">Grandes Momentos</a></li>
+      <li><a href="AnalisisPartidos.html">Análisis de Partidos</a></li>
+      <li><a href="OpinionesExpertos.html">Opiniones de Expertos</a></li>
+      <li><a href="EntrevistasExclusivas.html">Entrevistas Exclusivas</a></li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h2>Entrevistas Exclusivas</h2>
+    <p>En esta sección, te presentamos una serie de entrevistas exclusivas con figuras prominentes del fútbol. Disfruta de sus perspectivas únicas y reflexiones sobre el juego.</p>
+
+    <div class="interview-container">
+      <!-- Entrevista 1 -->
+      <div class="interview">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0iM_ZxR02GQ?si=DFQPQGf6k81CNX5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Entrevista con Lionel Messi</h3>
+        <p>En esta entrevista, Lionel Messi habla sobre su carrera, sus motivaciones y sus experiencias en el fútbol profesional.</p>
+      </div>
+
+      <!-- Entrevista 2 -->
+      <div class="interview">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BiuHKtBpDqw?si=o-84w6LHyl61yFKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Entrevista con Cristiano Ronaldo</h3>
+        <p>Cristiano Ronaldo comparte sus pensamientos sobre los desafíos que ha enfrentado a lo largo de su carrera y sus aspiraciones futuras.</p>
+      </div>
+
+      <!-- Entrevista 3 -->
+      <div class="interview">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cLtdqqlaG3k?si=eQqyU4tRzeDKokqp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Entrevista con José Mourinho</h3>
+        <p>El famoso entrenador José Mourinho discute sus estrategias de entrenamiento, sus éxitos y las lecciones aprendidas en su carrera.</p>
+      </div>
+
+      <!-- Entrevista 4 -->
+      <div class="interview">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jGtkRNU9nRE?si=yhWrsP6urr8Z5Tzj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Entrevista con Zinedine Zidane</h3>
+        <p>Zinedine Zidane ofrece una visión profunda sobre su transición de jugador a entrenador y sus experiencias en la gestión de equipos.</p>
+      </div>
+
+      <!-- Entrevista 5 -->
+      <div class="interview">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/gxXTEhQBDm8?si=NO805kkpoLH7wSwL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Entrevista con Marta Vieira da Silva</h3>
+        <p>Marta, una de las mejores jugadoras de fútbol femenino, habla sobre su trayectoria, el crecimiento del fútbol femenino y sus objetivos futuros.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

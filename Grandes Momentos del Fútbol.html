@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grandes Momentos del Fútbol</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  /* Resetting default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Overlay for header */
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .momento-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .momento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .momento iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .momento h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5em;
+  }
+
+  .momento p {
+    max-width: 800px;
+    font-size: 1em;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="EstadiosFamosos.html">Estadios Famosos</a></li>
+      <li><a href="Copa y Trofeos.html">Copas y Trofeos</a></li>
+      <li><a href="Grandes Finales.html">Grandes Finales</a></li>
+      <li><a href="LigasFemeninas.html">Ligas Femeninas</a></li>
+      <li><a href="HistoriaUEFA.html">Historia de la UEFA</a></li>
+      <li><a href="TacticasFormaciones.html">Tácticas y Formaciones</a></li>
+      <li><a href="GrandesMomentos.html">Grandes Momentos</a></li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h2>Grandes Momentos del Fútbol</h2>
+    <p>El fútbol ha visto muchos momentos memorables que han quedado grabados en la historia del deporte. A continuación, algunos de los momentos más emblemáticos y emocionantes, capturados en video.</p>
+
+    <div class="momento-container">
+      <!-- Momento 1 -->
+      <div class="momento">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IoA0YaCA2Yk?si=DiGold7cUkKBnKJv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>El Gol del Siglo</h3>
+        <p>En los cuartos de final de la Copa del Mundo 1986, Diego Maradona anotó un gol increíble contra Inglaterra, driblando a cinco jugadores y marcando uno de los goles más icónicos de la historia del fútbol.</p>
+      </div>
+
+      <!-- Momento 2 -->
+      <div class="momento">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DRSi1vKOPoc?si=7eupNYyuFOv4gX6B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>La Remontada de Estambul</h3>
+        <p>En la final de la Liga de Campeones de 2005, el Liverpool logró una remontada histórica contra el AC Milan, igualando el marcador 3-3 después de estar 3-0 abajo al medio tiempo y ganando en la tanda de penales.</p>
+      </div>
+
+      <!-- Momento 3 -->
+      <div class="momento">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PKIwvwQLs_A?si=MAnQJQ1GR9NMOzWm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>Gol de Zidane en la Final del Mundial 1998</h3>
+        <p>En la final de la Copa del Mundo 1998, Zinedine Zidane anotó dos goles de cabeza en la final contra Brasil, llevando a Francia a su primer título mundial en casa.</p>
+      </div>
+
+      <!-- Momento 4 -->
+      <div class="momento">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/k6xteH5ryHM?si=RhlqG9zVWQ6jAfMx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>El Doble de Ronaldo en la Final del Mundial 2002</h3>
+        <p>Ronaldo, con un doblete en la final de la Copa del Mundo 2002 contra Alemania, llevó a Brasil a su quinto título mundial, consolidando su estatus como uno de los mejores delanteros de todos los tiempos.</p>
+      </div>
+
+      <!-- Momento 5 -->
+      <div class="momento">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OS9cPEbEfA4?si=3H3BUxTg7nn3uCox" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3>El Último Gol de Ronaldinho con Barcelona</h3>
+        <p>En un clásico contra el Real Madrid en 2006, Ronaldinho anotó un gol memorable en el Camp Nou, celebrando con una ovación de pie y dejando una marca indeleble en la historia del Barcelona.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

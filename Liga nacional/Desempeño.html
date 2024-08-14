@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Desempeños</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+
+#Ing img {
+  width: 32px; /* Puedes ajustar el tamaño según lo que necesites */
+  height: auto;
+  margin: 0 10px; /* Espaciado entre los iconos */
+  transition: transform 0.3s ease; /* Añade un efecto suave */
+}
+
+#Ing img:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
+
+  /* Resetting default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(../Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  /* Overlay for header */
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1e3d59;
+    border-bottom: 2px solid #1e3d59;
+    padding-bottom: 10px;
+  }
+
+  .team-section {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .team-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .team-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  #carruselContainer {
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #carruselContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+
+  #tabla th, #tabla td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  #tabla th {
+    background-color: #1e3d59;
+    color: #fff;
+  }
+
+  #tabla tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+</style>
+
+<script>
+  $(document).ready(function(){
+    $('.slick-carousel').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+    });
+  });
+</script>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="../index.html">Inicio</a>
+        <ul>
+          <li><a href="../Autores.html">Autores</a></li>
+        </ul>
+      </li>
+      <li><a href="../Liga española.html">Liga Española</a>
+        <ul>
+          <li><a href="../HistoriaLiga.html">Historia</a></li>
+          <li><a href="../NoticiasLiga.html">Noticias</a></li>
+          <li><a href="../PartidosLiga.html">Partidos</a></li>
+          <li><a href="../ResultadosLiga.html">Resultados</a></li>
+          <li><a href="../ClasificacionLiga.html">Clasificación</a></li>
+          <li><a href="../FichajesLiga.html">Fichajes</a></li>
+          <li><a href="../GolesLiga.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+      <li><a href="../informacion de hoy.html">Información de Hoy</a>
+        <ul>
+          <li><a href="../Partidos Hoy.html">Partidos de hoy</a></li>
+          <li><a href="../Juegos.html">VideoJuegos</a></li>
+          <li><a href="../Noticias.html">Noticias</a></li>
+          <li><a href="../entrevistas.html">Entrevistas</a></li>
+          <li><a href="../Futballl femenino.html">Futbol Femenino</a></li>
+          <li><a href="../otras paginas.html">Otras Páginas</a></li>
+        </ul>
+      </li>
+      <li><a href="Liga nacional.html">Liga Nacional</a>
+        <ul>
+          <li><a href="Liga 2023.html">Liga 2023</a>
+            <ul>
+              <li><a href="Trayectoria.html">Trayectoria</a></li>
+              <li><a href="Desempeño.html">Desempeño</a></li>
+              <li><a href="Rendimiento.html">Rendimiento</a></li>
+              <li><a href="Pronostico.html">Pronóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="Curiosidades y anecdotas.html">Curiosidades y anécdotas</a></li>
+        </ul>
+      </li>
+      <li><a href="../LigaInglesa.html">Liga Inglesa</a>
+        <ul>
+          <li><a href="../HistoriaPremierL.html">Historia</a></li>
+          <li><a href="../NoticiasPremierL.html">Noticias</a></li>
+          <li><a href="../PartidosPremierL.html">Partidos</a></li>
+          <li><a href="../ResultadosPremierL.html">Resultados</a></li>
+          <li><a href="../ClasificacionPremierL.html">Clasificación</a></li>
+          <li><a href="../FichajesPremierL.html">Fichajes</a></li>
+          <li><a href="../GolesPremierL.html">Los Mejores Goles</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h2>Apertura 2023-2024</h2>
+
+    <div class="team-section">
+      <h3>Olimpia</h3>
+      <p>El equipo albo ha sido el gran dominador del torneo, terminando la fase regular como líder invicto, con 48 puntos en 18 partidos, 15 victorias y 3 empates, 47 goles a favor y 9 en contra, una diferencia de +38. El Olimpia ha demostrado una gran solvencia defensiva, una gran efectividad ofensiva y una gran capacidad para resolver los partidos difíciles. Su entrenador, Pedro Troglio, ha sabido sacar el máximo provecho de su plantilla, que cuenta con jugadores de gran calidad y experiencia, como Agustín Auzmendi, el máximo goleador del torneo con 16 tantos; Michael Pérez, el jugador más valioso del torneo con un valor de mercado de 500 mil euros; y Luis López, el portero menos batido del torneo con solo 9 goles encajados. El Olimpia se clasificó directamente a las semifinales, donde se enfrentará al Génesis, el equipo revelación del torneo, al que ya le ganó los dos partidos que jugaron en la fase regular, por 3-0 y 2-1. El Olimpia es el gran favorito para ganar el torneo y sumar su 33° título.</p>
+    </div>
+
+    <div class="team-section">
+      <h3>Marathón</h3>
+      <p>El equipo verde ha sido el principal perseguidor del Olimpia, terminando la fase regular en el segundo lugar, con 32 puntos en 18 partidos, 9 victorias, 5 empates y 4 derrotas, 28 goles a favor y 16 en contra, una diferencia de +12. El Marathón ha mostrado un juego dinámico, ofensivo y vistoso, basado en la posesión del balón, la presión alta y la velocidad por las bandas. Su entrenador, Salomón Nazar, ha logrado recuperar el nivel del equipo, que había tenido un mal inicio de torneo, y ha potenciado el talento de sus jugadores, como Lucas Campana, el segundo máximo goleador del torneo con 11 tantos; Edwin Rodríguez, el mejor asistente del torneo con 10 pases de gol; y Marcelo Pereira, el defensa central más valioso del torneo con un valor de mercado de 325 mil euros. El Marathón se clasificó directamente a las semifinales, donde se enfrentará al Motagua, su clásico rival, al que ya le ganó uno de los dos partidos que jugaron en la fase regular, por 2-0. El Marathón quiere volver a ser campeón después de 14 años y romper la hegemonía de los capitalinos.</p>
+    </div>
+
+    <div class="team-section">
+      <h3>Motagua</h3>
+      <p>El equipo azul ha sido el tercer clasificado de la fase regular, con 29 puntos en 18 partidos, 8 victorias, 5 empates y 5 derrotas, 25 goles a favor y 15 en contra, una diferencia de +10. El Motagua ha tenido un torneo irregular, alternando buenos y malos momentos, y sufriendo varias bajas por lesiones y suspensiones. Su entrenador, Diego Vázquez, ha intentado mantener el estilo de juego que le ha dado tantos éxitos al equipo, basado en la solidez defensiva, el orden táctico y el contragolpe. Sin embargo, el equipo ha mostrado algunas carencias en la creación y la definición, dependiendo demasiado de sus individualidades, como Jerry Bengtson, el tercer máximo goleador del torneo con 10 tantos; Roberto Moreira, el cuarto máximo goleador del torneo con 7 tantos; y Kevin López, el segundo mejor asistente del torneo con 6 pases de gol. El Motagua tuvo que jugar la fase de eliminación previa, donde se enfrentó al Real Sociedad, al que venció por 3-2 en el global. Ahora, se medirá al Marathón en las semifinales, buscando la revancha de la derrota que sufrió en la fase regular. El Motagua quiere recuperar el título que perdió ante el Olimpia en la final del torneo anterior.</p>
+    </div>
+
+    <div class="team-section">
+      <h3>Génesis</h3>
+      <p>El equipo naranja ha sido la gran sorpresa del torneo, clasificándose a las semifinales en su primera temporada en la primera división. El Génesis terminó la fase regular en el cuarto lugar, con 23 puntos en 18 partidos, 6 victorias, 5 empates y 7 derrotas, 19 goles a favor y 20 en contra, una diferencia de -1. El Génesis ha demostrado un juego valiente, solidario y atrevido, sin complejos ante los equipos grandes, y aprovechando sus oportunidades al máximo. Su entrenador, Jairo Ríos, ha logrado formar un equipo compacto, disciplinado y motivado, que cuenta con jugadores que han dado la talla en la máxima categoría, como Alexy Vega, el quinto máximo goleador del torneo con 6 tantos; Jairo Róchez, el sexto máximo goleador del torneo con 6 tantos; y Jhon Jairo López, el entrenador más joven del torneo con 29 años. El Génesis eliminó al Real Sociedad en los cuartos de final, con un global de 3-2, y ahora se enfrentará al Olimpia en las semifinales, al que intentará dar la sorpresa, pese a haber perdido los dos partidos que jugaron en la fase regular, por 3-0 y 2-1. El Génesis quiere seguir haciendo historia y llegar a la final en su debut en la primera división.</p>
+    </div>
+
+    <div class="team-section">
+      <h3>Real Sociedad</h3>
+      <p>El equipo tocoeño ha sido el quinto clasificado de la fase regular, con 22 puntos en 18 partidos, 5 victorias, 7 empates y 6 derrotas, 17 goles a favor y 19 en contra, una diferencia de -2. El Real Sociedad ha tenido un torneo de menos a más, pasando de estar en zona de descenso a clasificarse a la fase de eliminación previa. Su entrenador, Jhon Jairo López, ha conseguido mejorar el rendimiento del equipo, que ha basado su juego en la fortaleza defensiva, el juego aéreo y el balón parado. Su jugador más destacado ha sido Rony Martínez, el líder y capitán del equipo, que ha marcado 5 goles y ha dado 3 asistencias. El Real Sociedad cayó eliminado en los cuartos de final ante el Génesis, con un global de 3-2, tras haber empatado 1-1 en la ida y perdido 2-1 en la vuelta. El Real Sociedad se quedó con las ganas de volver a las semifinales, algo que no logra desde 2014.</p>
+    </div>
+
+    <div class="team-section">
+      <h3>Olancho</h3>
+      <p>El equipo olanchano ha sido el sexto clasificado de la fase regular, con 21 puntos en 18 partidos, 5 victorias, 6 empates y 7 derrotas, 16 goles a favor y 19 en contra, una diferencia de -3. El Olancho ha tenido un torneo aceptable, manteniéndose en la zona media de la tabla y clasificándose a la fase de eliminación previa. Su entrenador, Ramón Maradiaga, ha implantado un juego ordenado, equilibrado y combativo, que ha complicado a los equipos grandes. Su jugador más destacado ha sido José Pinto, el cuarto máximo goleador del torneo con 6 tantos. El Olancho cayó eliminado en los cuartos de final ante el Marathón, con un global de 4-1, tras haber perdido 2-0 en la ida y empatado 2-2 en la vuelta. El Olancho se quedó corto en su sueño de llegar a las semifinales, algo que nunca ha logrado en su historia.</p>
+    </div>
+  </div>
+
+   <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2023 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#carruselContainer').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: true,
+      infinite: true,
+      fade: true,
+      cssEase: 'linear'
+    });
+  });
+</script>
+</body>
+</html>

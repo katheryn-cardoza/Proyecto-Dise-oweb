@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Curiosidades y Anécdotas de la Liga Nacional Hondureña</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- jQuery and Slick Carousel -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  /* Resetting default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+
+  #Contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 60px; /* For footer space */
+  }
+
+  #encabezado {
+    width: 100%;
+    height: 200px;
+    background-image: url(../Imagenes/Encabezado.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  #encabezado::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #menu {
+    width: 100%;
+    background-color: #1e3d59;
+  }
+
+  #MenuBar1 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #MenuBar1 li {
+    position: relative;
+    margin: 0 20px;
+  }
+
+  #MenuBar1 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    font-weight: 700;
+    transition: background 0.3s;
+  }
+
+  #MenuBar1 li:hover > a {
+    background-color: #16324f;
+  }
+
+  #MenuBar1 ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    background-color: #1e3d59;
+    min-width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #MenuBar1 li:hover > ul {
+    display: block;
+  }
+
+  #MenuBar1 ul li {
+    margin: 0;
+  }
+
+  #MenuBar1 ul li a {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: transparent;
+  }
+
+  #MenuBar1 ul li a:hover {
+    background-color: #16324f;
+  }
+
+  #body {
+    padding: 40px 20px;
+  }
+
+  #body h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  #body p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .img-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #Ing {
+    width: 100%;
+    background-color: #1e3d59;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #Ing p {
+    margin: 0;
+    font-weight: 700;
+  }
+
+  #Ing img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+  }
+
+  #Ing a:hover img {
+    transform: scale(1.1);
+  }
+
+  footer {
+    background-color: #1e3d59;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+<div id="Contenedor">
+  <div id="encabezado"></div>
+  
+  <div id="menu">
+    <ul id="MenuBar1" class="MenuBarHorizontal">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../Liga española.html">Liga Española</a></li>
+      <li><a href="../informacion de hoy.html">Información de Hoy</a></li>
+      <li><a href="Liga nacional.html">Liga Nacional</a></li>
+      <li><a href="../LigaInglesa.html">Liga Inglesa</a></li>
+    </ul>
+  </div>
+
+  <div id="body">
+    <h1>Curiosidades y Anécdotas de la Liga Nacional Hondureña</h1>
+    <p>La Liga Nacional Hondureña es el torneo de fútbol profesional más importante de Honduras, que se disputa desde 1964 con la participación de 10 equipos. En este artículo, te presentamos algunas curiosidades o anécdotas sobre la liga, que te harán conocer más sobre su historia, sus récords, sus rivalidades y sus protagonistas.</p>
+    <div class="img-container">
+      <img src="../Imagenes/ima1.jpg" alt="Imagen 1">
+      <img src="../Imagenes/ima2.jpg" alt="Imagen 2">
+      <img src="../Imagenes/ima3.jpg" alt="Imagen 3">
+    </div>
+    <p>- ¿Sabías que el primer campeón de la liga fue el Platense FC, que venció al Olimpia por 2-1 en el partido decisivo en 1965? El primer goleador fue el argentino José Cardona, del Real España, con 16 tantos.</p>
+    <p>- ¿Sabías que el Olimpia es el único equipo que ha ganado cuatro torneos consecutivos, entre 2011 y 2013? También es el único que ha ganado tres torneos consecutivos en dos ocasiones, entre 2008 y 2010, y entre 2019 y 2021.</p>
+    <p>- ¿Sabías que el Motagua es el único equipo que ha ganado el torneo sin perder ningún partido, en el Apertura 2016? Ganó 14 partidos y empató 4, con 36 goles a favor y 9 en contra.</p>
+    <p>- ¿Sabías que el Marathón es el equipo que más goles ha marcado en un torneo, con 67 tantos en el Apertura 2008? Su goleador fue el brasileño Charles Córdoba, con 18 dianas.</p>
+    <p>- ¿Sabías que el Real España es el equipo que más goles ha recibido en un torneo, con 63 tantos en el Apertura 2017? Su portero fue el hondureño Kevin Hernández, que encajó 41 goles en 18 partidos.</p>
+    <p>- ¿Sabías que el Génesis es el primer equipo que se clasifica a las semifinales en su primera temporada en la primera división, en el Clausura 2023? Su entrenador es Jairo Ríos, el más joven del torneo, con 29 años.</p>
+    <p>- ¿Sabías que el clásico más antiguo de la liga es el que enfrenta al Olimpia y al Motagua, desde 1928? Se le conoce como el súper clásico y se ha jugado 331 veces, con 136 victorias del Olimpia, 97 del Motagua y 98 empates.</p>
+    <p>- ¿Sabías que el clásico más goleado de la liga es el que enfrenta al Marathón y al Real España, desde 1965? Se le conoce como el clásico sampedrano y se ha jugado 252 veces, con 101 victorias del Marathón, 86 del Real España y 65 empates. El resultado más abultado fue un 9-1 a favor del Marathón en 1974.</p>
+    <p>Esperamos que estas curiosidades o anécdotas te hayan gustado y te hayan servido para conocer más sobre la Liga Nacional Hondureña, una de las más competitivas y atractivas de Centroamérica. Si quieres saber más sobre la liga, te invitamos a visitar nuestra página web, donde encontrarás las últimas noticias, los resultados, las estadísticas, los calendarios, las entrevistas y mucho más. No te lo pierdas, porque la Liga Nacional Hondureña es la mejor liga de Centroamérica y una de las más atractivas del mundo. ¡Vive la pasión del fútbol hondureño con nosotros!</p>
+  </div>
+
+  <div id="Ing">
+    <p>Diseño web - JahirCorrales</p>
+    <a href="https://www.youtube.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Google">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+    </a>
+    <a href="https://www.whatsapp.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2024 Todos los derechos reservados.
+  </footer>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.img-container').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
+</body>
+</html>
